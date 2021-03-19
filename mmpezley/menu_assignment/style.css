@@ -1,0 +1,364 @@
+
+header{
+	
+	padding: 1% 10%;
+	font-family: Apple Chancery;
+	background-color: beige;
+}
+
+main{
+	width: 80%; 
+	margin: 0.5in auto;
+}
+
+body{
+	
+	background-color: ivory;
+	font-family: Helvetica;
+}
+
+h1, h2{
+	font-family: Stencil;
+	border-bottom: solid #A52A2A;
+	border-top: solid #A52A2A;
+	text-align: center;
+}
+
+h1{
+	font-size: 4em;
+	margin: 0.25in;	
+}
+
+h2{
+	font-size: 3em;
+	margin: 0.15in 0.25in 0.25in;
+}
+
+h2.left, h2.right {
+	font-size: 1.5em;
+	border: none;
+	text-decoration: underline;
+	margin-bottom: 0.25em;
+}
+
+h2.left{
+	text-align: left;
+	
+	padding-top: 1em;
+}
+
+h2.right{
+	text-align: right;
+	padding-top: 1.5em;
+}
+
+h2.heading{
+	font-size: 1.5em;
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	
+}
+
+h3{
+	font-family: Helvetica;
+	margin-bottom: 0;
+	font-size: 2em;
+	margin: 0 0.25in;
+	text-decoration: underline;
+	font-weight: 800;
+}
+
+p{
+	margin: 0 0.25in;
+	font-family: Helvetica;
+}
+
+p.left{
+	text-align: left;
+}
+
+p.right{
+	text-align: right;
+}
+
+dl{
+	font-weight: bold;
+	margin: 0 0.25in;
+}
+
+dd{
+	margin-left: 0;
+	margin-bottom: 0.5em;
+}
+
+ul{
+	margin: 0 0.25in 0.25in;
+}
+
+li{
+	font-weight: bold;
+}
+
+li.options{
+	margin-left: -0.75in;
+	list-style-type: circle;
+}
+
+li.eggs, li.sidesl{
+	list-style-type: none;
+	margin-left: -0.4in;
+}
+
+li.sidesl{
+	margin-bottom: 0.75em;
+}
+
+li.underlined, li.second{
+	border-bottom: dotted;
+}
+
+span{
+	font-weight: normal;
+}
+
+span.toright{
+	float: right;
+}
+
+#navigation{
+	text-align: center;
+	font-size: 1.5em;
+	color: #A52A2A;
+	font-weight: bold;
+}
+
+header a {
+	color: #A52A2A;
+	font-family: Helvetica;
+	font-weight: normal;
+}
+
+header a:hover {
+	color: black;
+	font-weight: bold;
+}
+
+/*Changes if there are columns and
+where the pictures are based on the size of the screen*/
+@media screen and (min-width: 600px){
+	section.eggbreakfast{
+		columns: 10rem 2;	
+	}
+}
+
+@media screen and (max-width: 900px){
+	section.images{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 900px){
+	section.bottom{
+		columns: 10rem 2;	
+	}
+	#img1, #img2, #img3 {
+		display: none;
+	}
+	hr.narrow{
+		display: none;
+	}
+	section.eggbreakfast{
+		columns: 10rem 1;	
+	}
+}
+
+@media screen and (min-width: 1000px){
+	section.eggbreakfast{
+		columns: 10rem 2;	
+	}
+}
+
+
+
+#larry{
+	font-size: 1.5em;
+	margin: 0.25in 0.1in;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	color: #A52A2A;
+}
+
+#health{
+	font-size: 0.75em;
+}
+
+#certificate{
+	font-size: 2.5em;
+	margin: 0.25in 0.25in;
+	padding: 0.1in 0;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	color: #A52A2A;
+}
+
+#breakfastb, #lunchl, #drinksd, #sweetss{
+	border: solid 2pt #A52A2A;
+	margin-bottom: 3em;
+}
+
+/*Creates Columns*/
+section.breakfast{
+	columns: 10rem 2;	
+}
+
+section.sandwiches4{
+	columns: 10rem 4;
+}
+
+section.break{
+	break-inside: avoid;
+}
+
+#drinksd, #sides, #eggs, #bspecials, #hours, #location{
+	break-inside: avoid;
+}
+
+#sides, #sweetss, #drinksd, #sidesb, #sandwiches {
+	padding-bottom: 1em;
+}
+
+#bspecials{
+	padding-bottom: 0.1em;
+}
+
+/*Footer*/
+footer{
+	width: 80%; 
+	margin-bottom: 0;
+	
+	background-color: beige;
+	padding: 1% 10%;
+	font-family: Helvetica;
+}
+
+footer div {
+	display: inline-block;
+}
+
+/*Changes footer based on screen size*/	
+/*The logo appears and disappears based on the screen size. */
+@media screen and (max-width: 750px){
+	.foot4{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 750px){
+	.foot2{
+		width: 35%
+	}
+	
+	.foot3{
+		width: 30%;
+	}
+	
+	.foot4{
+		width: 30%
+		display: block;
+	}
+	
+}
+
+@media screen and (min-width: 950px){
+	.foot2{
+		width: 30%
+	}
+	
+	.foot3{
+		width: 32%;
+		margin-right: 1em;
+	}
+	
+	.foot4{
+		width: 33%
+		display: block;
+	}
+	
+}
+
+@media screen and (min-width: 1125px){
+	.foot2, .foot3{
+		width: 23%;
+	}
+
+	.foot1 {
+		width: 48%;
+		border-right: 1px solid #999;
+		margin-top: 0.25in;
+		text-align: right;
+	}
+	
+	.foot4{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1350px){
+	.foot2{
+		width: 19%;
+	}
+
+	.foot3{
+		width: 18%;
+	}
+
+	.foot1 {
+		width: 57%;
+		border-right: 1px solid #999;
+		margin-top: 0.25in;
+		text-align: right;
+	}
+	
+	.foot4{
+		display: none;
+		width: 0%;
+	}
+}
+
+.foot1{
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;	
+	color:#A52A2A;
+	font-style: italic;
+	margin-top: 0.75em;
+}
+
+/*Food images*/
+img {
+	display: block;
+	width: 70%;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .4in;
+}
+
+section.images{
+	float: center;
+	columns: 10rem 3;
+}
+
+#img1, #img2, #img3{
+	width: 50%;
+}
+
+#img4{
+	width: 60%;
+	margin-bottom: 0;
+	margin-left: 4em;
+}
+
