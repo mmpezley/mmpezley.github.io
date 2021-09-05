@@ -125,8 +125,8 @@ div.X{ grid-area: X; }
 div.Y{ grid-area: Y; }
 div.YY{ grid-area: YY; }
 
-div.johndeere2, div.sofirst, div.robotics, div.winnie{ border-top: solid 2px #988E92; }
-div.johndeere1, div.johndeere3, div.sofirst1{ margin-bottom: 0.4in; }
+div.johndeere2, div.sofirst, div.robotics, div.winnie, div.webclass{ border-top: solid 2px #988E92; }
+div.johndeere1, div.johndeere3, div.sofirst1, div.webclass1{ margin-bottom: 0.4in; }
 div.robotics1{ 	padding-bottom: 0.4in; }
 
 
@@ -139,6 +139,8 @@ div.sofirst1{ grid-area: sofirst1; }
 div.sofirst2{ grid-area: sofirst2; }
 div.robotics{ grid-area: robotics; }
 div.robotics1{ grid-area: robotics1; }
+div.webclass{ grid-area: webclass; }
+div.webclass1{ grid-area: webclass1; }
 
 div.winnie{ grid-area: winnie; }
 div.head{ grid-area: head;}
@@ -155,6 +157,8 @@ p.coninfo{
 }
 
 div.robotics1{ padding-bottom:0.2in;}
+
+
 
 div.extra{
 	display: grid;
@@ -196,7 +200,7 @@ div.experiences{
 		"II"
 }
 
-img.scorecardtemp, img.article, img.instagram, img.yeti, img.headshot{
+img.scorecardtemp, img.article, img.instagram, img.yeti, img.headshot, img.grove{
 	display: block;
 	width: 300px;
 	float: center;
@@ -422,6 +426,8 @@ img.headshot{ width: 300px; }
 			"johndeere1"
 			"johndeere2"
 			"johndeere3"
+			"webclass"
+			"webclass1"
 			"sofirst"
 			"sofirst1"
 			"robotics"
@@ -429,7 +435,7 @@ img.headshot{ width: 300px; }
 	}
 	
 	
-	img.scorecardtemp, img.article, img.instagram, img.yeti{
+	img.scorecardtemp, img.article, img.instagram, img.yeti, img.grove{
 		width: 300px;
 		float: left; 
 		margin: 0.5em 4em 1em 0em;
