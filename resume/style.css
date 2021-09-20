@@ -125,8 +125,8 @@ div.X{ grid-area: X; }
 div.Y{ grid-area: Y; }
 div.YY{ grid-area: YY; }
 
-div.johndeere2, div.sofirst, div.robotics, div.winnie, div.webclass{ border-top: solid 2px #988E92; }
-div.johndeere1, div.johndeere3, div.sofirst1, div.webclass1{ margin-bottom: 0.4in; }
+div.johndeere2, div.johndeere, div.sofirst, div.robotics, div.winnie, div.webclass{ border-top: solid 2px #988E92; }
+div.johndeere1, div.johndeere3, div.johndeere5, div.sofirst1, div.webclass1{ margin-bottom: 0.4in; }
 div.robotics1{ 	padding-bottom: 0.4in; }
 
 
@@ -134,6 +134,8 @@ div.johndeere{ grid-area: johndeere; }
 div.johndeere1{ grid-area: johndeere1; }
 div.johndeere2{ grid-area: johndeere2; }
 div.johndeere3{ grid-area: johndeere3; }
+div.johndeere4{ grid-area: johndeere4; }
+div.johndeere5{ grid-area: johndeere5; }
 div.sofirst{ grid-area: sofirst; }
 div.sofirst1{ grid-area: sofirst1; }
 div.sofirst2{ grid-area: sofirst2; }
@@ -287,6 +289,11 @@ ul{
 span.italized{ font-style: italic; }
 span.bolt{ font-weight: bold; }
 
+span.not{ 
+	font-style: none; 
+	font-weight: none; 
+}
+
 span.underlined{
 	text-decoration: underline;
 	font-style: none;
@@ -422,6 +429,8 @@ img.headshot{ width: 300px; }
 		align-items: top;
 		grid-template-columns: 1fr;
 		grid-template-areas:
+			"johndeere4"
+			"johndeere5"
 			"johndeere"
 			"johndeere1"
 			"johndeere2"
@@ -441,7 +450,7 @@ img.headshot{ width: 300px; }
 		margin: 0.5em 4em 1em 0em;
 	}
 	
-	div.johndeere1, div.johndeere3, div.sofirst1 { margin-bottom: 0.25in; }
+	div.johndeere1, div.johndeere3, div.johndeere5, div.sofirst1 { margin-bottom: 0.25in; }
 	
 	img.headshot{
 		margin: 1em 4em 2em 0em;
