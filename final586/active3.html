@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Active</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+		<link href="style.css" rel="stylesheet">
+		
+    </head>
+    <body>
+		<div id="heading">
+			<h1>Physical Activity</h1>
+		</div>
+		<div id="tooltip" class="hidden">
+			<p><span id="date">11/11</span></p>
+			<p><span id="physical">Physical Activity: <span id="values">100</span> steps</span></p>
+			<p><br></p>
+			<p><span class="label">Miles:</span> <span id="mile">15</span></p>
+			<p><span class="label">Kcal Burned:</span> <span id="calorie">200</span></p>
+			
+			<p><span class="label">Day's Activities:</span></p>
+			<ul>
+				<li>Class: <span id="class">None</span></li>
+				<li>Work: <span id="work">None</span></li>
+				<li>Homework</li>
+				<li>Other: <span id="other">None</span></li>
+			</ul>
+		</div>
+	   
+		<script type="text/javascript">
+		
+			//Width and height
+			var w = 500;
+			var h = 400;
+			var barPadding = 10;
+			var padding = 30;
+			
+			var dates = ["11/12", "11/13", "11/14", "11/15", "11/16", "11/17", "11/18"];
+			var dataset = [4746, 1250, 1589, 7441, 7312, 3118, 2905];
+			var miles = [1, 2, 3, 4, 5, 6, 7];
+			
+			var xScale = d3.scaleBand()
+							.domain(d3.range(dataset.length))
+							.rangeRound([0, w])
+							.paddingInner(0.05);
+
+			var yScale = d3.scaleLinear()
+							.domain([0, d3.max(dataset)])
+							.range([0, h]);
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Create bars
+			svg.selectAll("rect")
+			  // .data(date)
+			   //.enter()
+			 //  .attr("day", function(d) {
+			//		return d;
+			   //})
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr("x", function(d, i) {
+			   		return xScale(i);
+			   })
+			   .attr("y", function(d) {
+			   		return h-(d/20);//h - yScale(d);
+			   })
+			   .attr("width", xScale.bandwidth())
+			   .attr("height", function(d) {
+			   		return d/20;//yScale(d);
+			   })
+			   .attr("fill", function(d) {
+					return "rgb(255,"  + (255-(d/30)) + ", " + "190)";
+			   })
+			   .attr("position", function(d) {
+			   
+			   })
+			   .on("mouseover", function(d) {
+
+					//console.log(d);
+					//Get this bar's x/y values, then augment for the tooltip
+					var xPosition = parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
+					var yPosition = parseFloat(d3.select(this).attr("y")) / 2 + h / 2;
+
+					//Update the tooltip position and value
+					d3.select("#tooltip")
+						.style("left", xPosition + "px")
+						.style("top", yPosition + "px")	
+						.select("#values")
+						.text(d3.select(this).attr("height") * 20);
+						d3.select("#date")
+						.text(function(d){
+							if(xPosition  < 100){
+								return "November 12th"
+							}
+							else if (xPosition < 110){
+								return "November 13th"
+							}
+							else if (xPosition < 180){
+								return "November 14th"
+							}
+							else if (xPosition < 250){
+								return "November 15th"
+							}
+							else if (xPosition < 330) {
+								return "November 16th"
+							}
+							else if (xPosition < 400) {
+								return "November 17th"
+							}
+							else{
+								return "November 18th"
+							}
+						})
+						d3.select("#mile")
+						.text(function(d) {
+							if(xPosition  < 100){
+								return "2.01"
+							}
+							else if (xPosition < 110){
+								return "0.63"
+							}
+							else if (xPosition < 180){
+								return "0.68"
+							}
+							else if (xPosition < 250){
+								return "3.19"
+							}
+							else if (xPosition < 330) {
+								return "3.13"
+							}
+							else if (xPosition < 400) {
+								return "1.33"
+							}
+							else{
+								return "1.24"
+							}
+						})
+						d3.select("#calorie")
+						.text(function(d) {
+							if(xPosition  < 100){
+								return "172"
+							}
+							else if (xPosition < 110){
+								return "45"
+							}
+							else if (xPosition < 180){
+								return "58"
+							}
+							else if (xPosition < 250){
+								return "271"
+							}
+							else if (xPosition < 330) {
+								return "266"
+							}
+							else if (xPosition < 400) {
+								return "113"
+							}
+							else{
+								return "106"
+							}
+						})
+						d3.select("#class")
+						.text(function(d) {
+							//Friday
+							if(xPosition  < 100){
+								return "1 hour"
+							}
+							//Saturday and Sunday
+							else if (xPosition < 180){
+								return "None"
+							}
+							//Monday
+							else if (xPosition < 250){
+								return "2 hour 20 minutes"
+							}
+							//Tuesday
+							else if (xPosition < 330) {
+								return "1 hour 20 minutes"
+							}
+							//Wednesday
+							else if (xPosition < 400) {
+								return "1 hour 20 minutes"
+							}
+							//Thursday
+							else{
+								return "1 hour 20 minutes"
+							}
+						})
+						d3.select("#work")
+						.text(function(d) {
+							//Friday
+							if(xPosition  < 100){
+								return "3 hours (hybrid) & 1 hour 10 minutes (virtual)"
+							}
+							//Saturday and Sunday
+							else if (xPosition < 180){
+								return "None"
+							}
+							//Monday
+							else if (xPosition < 250){
+								return "50 minutes (in-person) & 1 hour 30 minutes (virtual)"
+							}
+							//Tuesday
+							else if (xPosition < 330) {
+								return "30 minutes (virtual) & 1 hour 30 minutes (hybrid)"
+							}
+							//Wednesday
+							else if (xPosition < 400) {
+								return "1 hour 30 minutes (virtual)"
+							}
+							//Thursday
+							else{
+								return "4 hours (virtual)"
+							}
+						})
+						d3.select("#other")
+						.text(function(d) {
+							//Friday
+							if(xPosition  < 100){
+								return "Baking and hanging out with friends"
+							}
+							//Saturday
+							else if (xPosition < 110){
+								return "Hanging out with friends"
+							}
+							//Sunday
+							else if (xPosition < 180){
+								return "Errands and hanging out with friends"
+							}
+							//Monday
+							else if (xPosition < 250){
+								return "Group study session"
+							}
+							//Tuesday
+							else if (xPosition < 330) {
+								return "None"
+							}
+							//Wednesday and Thursday
+							else{
+								return "Hanging out with friends"
+							}
+						})
+					//Show the tooltip
+					d3.select("#tooltip").classed("hidden", false);
+
+			   })
+			   .on("mouseout", function() {
+			   
+					//Hide the tooltip
+					d3.select("#tooltip").classed("hidden", true);
+
+					
+			   })
+			   
+				//Labels
+			svg.selectAll("text")
+				.data(dates)
+				.enter()
+				.append("text")
+				.text(function(d) {
+					return d;
+				})
+				.attr("x", function(d, i) {
+					return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2 +3;
+				})
+				.attr("y", function(d) {
+					return h - 10;//- (d / 20)  ;
+				})
+				.attr("font-family", "sans-serif")
+				.attr("font-size", "15px")
+				.attr("text-anchor", "middle")
+				.attr("font-weight", "bold")
+				
+				.attr("fill", "black");
+			
+			var xAxis = d3.axisBottom(xScale);  
+			
+			svg.append("g")
+			   .attr("class", "axis")
+			   .attr("transform", "translate(0," + (h -1) + ")")
+			   .attr("stroke-width", "5px")
+			   .call(xAxis);
+			
+		
+		</script>
+    </body>
+</html>

@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Email</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<link href="style2.css" rel="stylesheet">
+		
+    </head>
+    <body>
+		<div id="heading">
+			<h1>Email Activity</h1>
+		</div>
+		<div id="tooltip" class="hidden">
+			<p><span id="category">Placeholder</span></p>
+			<p><span id="emails">100</span> emails</p>
+			
+		</div>
+		<div class = "gridbox">
+			<div id="classes" class="headings">
+				<p>Classes</p>
+			</div>
+			<div id="white1"></div>
+			<div id="work" class="headings">
+				<p>Work</p>
+			</div>
+			<div id="white2"></div>
+			<div id="junk" class="headings">
+				<p>Junk</p>
+			</div>
+			<div id="white3"></div>
+			<div id="others" class="headings">
+				<p>Other Emails</p>
+			</div>
+		</div>
+	   
+		<script type="text/javascript">
+			
+			
+			
+			//Width and height
+			var w = 1000;
+			var h = 850;
+
+			//Original data
+			var dataset = [
+				{ canvas: 2, grade: 2, personalClass: 3, otherClass: 3, space1: 0.5, workUnuseful: 24, workUseful: 3, space2: 0.5, advertisements: 3, mass: 4, spam: 0, space3: 0.5, other: 3 }//,
+				//{ canvas: 1, grade: 4, personalClass: 1, otherClass: 1, other: 0, advertisements: 0, mass: 2, personal: 0, //workUnuseful: 8, workUseful: 0, spam: 0 },
+				
+			];
+
+			//Set up stack method
+			var stack = d3.stack()
+						  .keys([ "canvas", "grade", "personalClass", "otherClass", "space1", "workUnuseful", "workUseful", "space2", "advertisements", "mass", "spam", "space3", "other" ]);
+
+			//Data, stacked
+			var series = stack(dataset);
+
+			//Set up scales
+			var xScale = d3.scaleBand()
+				.domain(d3.range(dataset.length))
+				.range([0, 100])
+				.paddingInner(0.05);
+		
+			var yScale = d3.scaleLinear()
+				.domain([0,				
+					d3.max(dataset, function(d) {
+						return d.canvas + d.grade + d.personalClass + d.otherClass + d.space1 + d.workUnuseful + d.workUseful + d.space2+ d.advertisements + d.mass + d.spam + d.space3+ d.other;
+					})
+				])
+				.range([0, h]);
+				
+			//Easy colors accessible via a 10-step ordinal scale
+			var colors = d3.scaleOrdinal(d3.schemeCategory10);
+
+			
+		
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", 200);
+	
+			// Add a group for each row of data
+			var groups = svg.selectAll("g")
+				.data(series)
+				.enter()
+				.append("g")
+				.attr("fill", function(d, i){
+					/*
+					//Canvas
+					if (i == 0 ){
+						return "rgb(44, 4, 28)";
+					}
+					//Grades
+					else if (i == 1){
+						return "rgb(96, 26, 53)";
+					}
+					*/
+					//Personal Class
+					if (i < 4){
+						return "rgb(122, 73, 136)";
+					}
+					//OtherClass
+					//else if (i == 3){
+					//	return "rgb(190, 147, 212)";
+					//}
+					//Personal
+					//else if (i == 4){
+					//	return "rgb(155, 208, 183)";
+						//"rgb(248, 223, 129)";
+						//"rgb(246, 170, 144)";
+						//"rgb(195, 111, 49)"; 
+					//}
+					else if (i==4){
+						return "white"
+					}
+					//Work - Unuseful 
+					else if (i < 7) {
+					
+						return "rgb(205, 94, 119)";
+					}
+					//Work - Useful
+					//else if (i == 6){
+					//	return "rgb(237, 171, 178)";
+					//}
+					else if (i == 7){
+						return "white"
+					}
+					//Advertisements
+					//else if (i == 8) {
+					//	return "rgb(53, 69, 93)";
+					//}
+					//Mass
+					else if (i < 10) {
+						return "rgb(146, 177, 182)";
+					}
+					//Spam
+					//else if (i == 10) {
+					//	return "rgb(191, 209, 223)";
+					//}
+					else if (i==11){
+						return "white"
+					}
+					//Other 
+					else {	
+						return "rgb(155, 208, 183)";
+					}
+					
+					//rgb(161, 4, 90) -> magenta
+				});
+	
+			// Add a rect for each data value
+			var test = 0;
+			var whiteBoolean = false;
+			var rects = groups.selectAll("rect")
+				.data(function(d) { return d; })
+				.enter()
+				.append("rect")
+				.attr("y", function(d, i) {
+					return xScale(i);
+				})
+				.attr("x", function(d) {
+					return yScale(d[0]);
+				})
+				.attr("width", function(d) {
+					return yScale(d[1]) - yScale(d[0]);
+				})
+				.attr("height", xScale.bandwidth())
+				.attr("position", function(d) {
+			   
+			   })
+			   .on("click", function(d){
+					console.log(d3.select("g").attr("fill"));
+					var change = 0;
+					
+					//purple
+					if (d3.select(this).attr("x") < 150){
+						var change = 1;
+						test = 1;
+					}
+					//white
+					else if (d3.select(this).attr("x") < 180){
+						var change = 0;
+						test = 0;
+					}
+					//pink
+					else if (d3.select(this).attr("x") < 610){
+						var change = 2;
+						test = 2;
+					}
+					//white
+					else if (d3.select(this).attr("x") < 660){
+						var change = 0;
+						test = 0;
+					}
+					//blue
+					else if (d3.select(this).attr("x") < 780){
+						var change = 3;
+						test = 3;
+					}
+					//white
+					else if (d3.select(this).attr("x") < 790){
+						var change = 0;
+						test = 0;
+					}
+					//green
+					else {
+						var change = 4;
+						test = 4;
+					}
+					if (change == 0){
+					}
+					else if (change == 1){
+						d3.selectAll("g")
+						//Canvas
+						.filter(function(d, i){
+							return i == 0;
+						})
+						.style("fill", "rgb(44, 4, 28)");
+						
+						//Grades
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 1;
+						})
+						.style("fill", "rgb(96, 26, 53)");
+						
+						//Personal Class
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 2;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//OtherClass
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 3;
+						})
+						.style("fill", "rgb(190, 147, 212)");
+						
+						//Work - Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 5 || i == 6;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						/*
+						//Work - Useful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 6;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						*/
+						
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						//Mass = 9
+						//rgb(146, 177, 182)
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 9;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						*/
+						
+						//Spam = 10
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						*/
+						
+						//Other = 12
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+						
+						//rgb(155, 208, 183)
+						
+					}
+					else if (change == 2){
+						d3.selectAll("g")
+						//Canvas
+						/*
+						.filter(function(d, i){
+							return i == 0;
+						})
+						.style("fill", "rgb(44, 4, 28)");
+						*/
+						//Grades
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Personal Class
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 2;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						*/
+						
+						//OtherClass
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 3;
+						})
+						.style("fill", "rgb(190, 147, 212)");
+						*/
+						
+						//Work - Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 5;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						
+						//Work - Useful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 6;
+						})
+						.style("fill", "rgb(237, 171, 178)");
+						
+						
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						//Mass = 9
+						//rgb(146, 177, 182)
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 9;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						*/
+						
+						//Spam = 10
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						*/
+						
+						//Other = 12
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+						
+						//rgb(155, 208, 183)
+					}
+					else if (change == 3){
+						d3.selectAll("g")
+						//Canvas
+						/*
+						.filter(function(d, i){
+							return i == 0;
+						})
+						.style("fill", "rgb(44, 4, 28)");
+						*/
+						//Grades
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Personal Class
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 2;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						*/
+						
+						//OtherClass
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 3;
+						})
+						.style("fill", "rgb(190, 147, 212)");
+						*/
+						
+						//Work - Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 5 || i == 6;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						/*
+						//Work - Useful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 6;
+						})
+						.style("fill", "rgb(237, 171, 178)");
+						*/
+						
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8;
+						})
+						.style("fill", "rgb(53, 69, 93)");
+						
+						//Mass = 9
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 9;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						
+						//Spam = 10
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 10;
+						})
+						.style("fill", "rgb(191, 209, 223)");
+						
+						//Other = 12
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+						
+						//rgb(155, 208, 183)
+					}
+					else {
+						d3.selectAll("g")
+						//Canvas
+						/*
+						.filter(function(d, i){
+							return i == 0;
+						})
+						.style("fill", "rgb(44, 4, 28)");
+						*/
+						//Grades
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Personal Class
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 2;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						*/
+						
+						//OtherClass
+						/*
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 3;
+						})
+						.style("fill", "rgb(190, 147, 212)");
+						*/
+						
+						//Work - Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 5 || i == 6;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						/*
+						//Work - Useful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 6;
+						})
+						.style("fill", "rgb(237, 171, 178)");
+						*/
+						
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						/*
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8;
+						})
+						.style("fill", "rgb(53, 69, 93)");
+						
+						//Mass = 9
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 9;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						
+						//Spam = 10
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 10;
+						})
+						.style("fill", "rgb(191, 209, 223)");
+						*/
+						//Other = 12
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+						
+						//rgb(155, 208, 183)
+					}
+					console.log("change = " + change);
+			   })
+			   
+			   .on("mouseover", function(d) {
+
+					//console.log(d);
+					//Get this bar's x/y values, then augment for the tooltip
+					var xPosition = parseFloat(d3.select(this).attr("x")) + 25;// + xScale.bandwidth() / 2;
+					var yPosition = parseFloat(d3.select(this).attr("y")) / 2 +165;// + h / 2;
+
+
+					//var white = false;
+					if (xPosition > 170){
+						if (xPosition < 205){
+							whiteBoolean = true;
+						}	
+					}
+					if (xPosition >680){
+						if (xPosition <685){
+							whiteBoolean = true;
+						}
+					}
+					if (xPosition > 810){
+						if (xPosition < 820){
+							whiteBoolean = true;
+						}
+					}
+					
+					/*
+					if (test == 0){
+						console.log("white")
+					}
+					else if (test == 1){
+						console.log("purple")
+					}
+					else if (test == 2) {
+						console.log("pink")
+					}
+					else if (test == 3){
+						console.log("blue")
+					}
+					else {
+						console.log("green")
+					}
+					*/
+					
+						
+					
+					if (whiteBoolean == true){
+						d3.select(this).classed("hidden", true);						
+					}
+					if (test == 1){
+						//d3.select("#tooltip")
+						if (xPosition < 50){
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 0;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 70) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 1;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 100) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 2;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 150) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 3;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 650) {
+							d3.select("#tooltip")
+							.style("left", "209.021px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 750) {
+							d3.select("#tooltip")
+							.style("left", "690.979px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 8 || i == 9 || i == 10;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 12;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						d3.select("#tooltip")
+						.style("top", yPosition + "px")	
+						.enter()
+						d3.select("#category")
+							.text(function(d){
+								//Canvas
+								if(xPosition < 50){
+									return "Class Announcements";
+								}
+								//Grade
+								else if (xPosition < 70){
+									return "Notification of New Grade Posting";
+								}
+								//Personal Class
+								else if (xPosition < 100){
+									return "From Professor Personally to Me"
+								}
+								//Other Class
+								else if (xPosition < 150){
+									return "Other Class Emails";
+								}
+								//Work Unuseful
+								//else if (xPosition < 220) {
+								//	return "Work - Not Related to Me";
+								//}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "Work";
+								}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "Advertisements";
+								//}
+								//Mass
+								else if (xPosition < 750) {
+									return "Junk";
+								}
+								//Spam
+								//Other
+								else{
+									return "Other Emails";
+								}
+								
+								
+							});							
+						d3.select("#emails")
+							.text(function (d){
+								//Canvas and Grade
+								if(xPosition < 70){
+									return "2";
+								}
+								//Personal Class and Other Class
+								else if (xPosition < 150){
+									return "3";
+								}
+								//Work 
+								else if (xPosition < 650) {
+									return "27";
+								}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "3";
+								//}
+								//Junk
+								else if (xPosition < 750) {
+									return "7";
+								}
+								//Spam
+								//Other
+								else{
+									return "3";
+								}
+							});
+							
+							
+				
+					
+						
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
+					}
+					else if (test == 2){
+						if (xPosition < 150){
+							d3.select("#tooltip")
+							.style("left", "25px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 0 || i == 1 || i == 2 || i == 3;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 220) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 650) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 6;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 750) {
+							d3.select("#tooltip")
+							.style("left", "690.979px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 8 || i == 9 || i == 10;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 12;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						d3.select("#tooltip")
+						.style("top", yPosition + "px")	
+						.enter()
+						d3.select("#category")
+							.text(function(d){
+								//Canvas
+								/*
+								if(xPosition < 50){
+									return "Class Announcements";
+								}
+								//Grade
+								else if (xPosition < 70){
+									return "Notification of New Grade Posting";
+								}
+								//Personal Class
+								else if (xPosition < 100){
+									return "From Professor Personally to Me"
+								}
+								*/
+								//Other Class
+								if (xPosition < 150){
+									return "Class";
+								}
+								//Work Unuseful
+								else if (xPosition < 220) {
+									return "Work - Not Related to Me";
+								}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "Work - Directly Related to Me";
+								}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "Advertisements";
+								//}
+								//Mass
+								else if (xPosition < 750) {
+									return "Junk";
+								}
+								//Spam
+								//Other
+								else{
+									return "Other Emails";
+								}
+								
+								
+							});							
+						d3.select("#emails")
+							.text(function (d){
+								//Canvas and Grade
+								/*
+								if(xPosition < 70){
+									return "2";
+								}
+								*/
+								//Personal Class and Other Class
+								if (xPosition < 150){
+									return "10";
+								}
+								//Work Unuseful
+								else if (xPosition < 220) {
+									return "24";
+								}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "3";
+								}
+								//Work 
+								//else if (xPosition < 650) {
+								//	return "27";
+								//}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "3";
+								//}
+								//Junk
+								else if (xPosition < 750) {
+									return "7";
+								}
+								//Spam
+								//Other
+								else{
+									return "3";
+								}
+							});
+							
+							
+				
+					
+						
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
+					}
+					
+					else if (test == 3){
+						if (xPosition < 150){
+							d3.select("#tooltip")
+							.style("left", "25px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 0 || i == 1 || i == 2 || i == 3;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 650) {
+							d3.select("#tooltip")
+							.style("left", "209.021px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 700) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 8;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 750) {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 9;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 12;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						d3.select("#tooltip")
+						.style("top", yPosition + "px")	
+						.enter()
+						d3.select("#category")
+							.text(function(d){
+								//Canvas
+								/*
+								if(xPosition < 50){
+									return "Class Announcements";
+								}
+								//Grade
+								else if (xPosition < 70){
+									return "Notification of New Grade Posting";
+								}
+								//Personal Class
+								else if (xPosition < 100){
+									return "From Professor Personally to Me"
+								}
+								*/
+								//Other Class
+								if (xPosition < 150){
+									return "Class";
+								}
+								//Work Unuseful
+								//else if (xPosition < 220) {
+								//	return "Work - Not Related to Me";
+								//}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "Work";
+								}
+								//Advertisements
+								else if (xPosition < 700) {
+									return "Advertisements";
+								}
+								//Mass
+								else if (xPosition < 750) {
+									return "Emails Sent to Mass List";
+								}
+								//Spam
+								//Other
+								else{
+									return "Other Emails";
+								}
+								
+								
+							});							
+						d3.select("#emails")
+							.text(function (d){
+								//Canvas and Grade
+								/*
+								if(xPosition < 70){
+									return "2";
+								}
+								*/
+								//Personal Class and Other Class
+								if (xPosition < 150){
+									return "10";
+								}
+								//Work 
+								else if (xPosition < 650) {
+									return "27";
+								}
+								//Advertisements
+								else if (xPosition < 700) {
+									return "3";
+								}
+								//Junk
+								else if (xPosition < 750) {
+									return "4";
+								}
+								//Spam
+								//Other
+								else{
+									return "3";
+								}
+							});
+							
+							
+				
+					
+						
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
+					}
+					
+					else{
+						if (xPosition < 150){
+							d3.select("#tooltip")
+							.style("left", "25px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 0 || i == 1 || i == 2 || i == 3;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						
+						else if (xPosition < 650) {
+							d3.select("#tooltip")
+							.style("left", "209.021px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else if (xPosition < 750) {
+							d3.select("#tooltip")
+							.style("left", "690.979px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 8 || i == 9 || i == 10;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						else {
+							d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 12;
+							})
+							.style("fill", "rgb(248, 223, 129)");
+						}
+						d3.select("#tooltip")
+						.style("top", yPosition + "px")	
+						.enter()
+						d3.select("#category")
+							.text(function(d){
+								//Canvas
+								/*
+								if(xPosition < 50){
+									return "Class Announcements";
+								}
+								//Grade
+								else if (xPosition < 70){
+									return "Notification of New Grade Posting";
+								}
+								//Personal Class
+								else if (xPosition < 100){
+									return "From Professor Personally to Me"
+								}
+								*/
+								//Other Class
+								if (xPosition < 150){
+									return "Class";
+								}
+								//Work Unuseful
+								//else if (xPosition < 220) {
+								//	return "Work - Not Related to Me";
+								//}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "Work";
+								}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "Advertisements";
+								//}
+								//Mass
+								else if (xPosition < 750) {
+									return "Junk";
+								}
+								//Spam
+								//Other
+								else{
+									return "Other Emails";
+								}
+								
+								
+							});							
+						d3.select("#emails")
+							.text(function (d){
+								//Canvas and Grade
+								/*
+								if(xPosition < 70){
+									return "2";
+								}
+								*/
+								//Personal Class and Other Class
+								if (xPosition < 150){
+									return "10";
+								}
+								//Work 
+								else if (xPosition < 650) {
+									return "27";
+								}
+								//Advertisements
+								//else if (xPosition < 700) {
+								//	return "3";
+								//}
+								//Junk
+								else if (xPosition < 750) {
+									return "7";
+								}
+								//Spam
+								//Other
+								else{
+									return "3";
+								}
+							});
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
+					}
+					/*
+					else{
+						//Update the tooltip position and value
+						d3.select("#tooltip")
+							.style("left", xPosition + "px")
+							.style("top", yPosition + "px")	
+							.enter()
+						d3.select("#category")
+							.text(function(d){
+								//Canvas
+								if(xPosition < 50){
+									return "Class Announcements";
+								}
+								//Grade
+								else if (xPosition < 70){
+									return "Notification of New Grade Posting";
+								}
+								//Personal Class
+								else if (xPosition < 100){
+									return "From Professor Personally to Me"
+								}
+								//Other Class
+								else if (xPosition < 150){
+									return "Other Class Emails";
+								}
+								//Work Unuseful
+								else if (xPosition < 220) {
+									return "Work - Not Related to Me";
+								}
+								//Work Useful 
+								else if (xPosition < 650) {
+									return "Work - Directly Related to Me";
+								}
+								//Advertisements
+								else if (xPosition < 700) {
+									return "Advertisements";
+								}
+								//Mass
+								else if (xPosition < 750) {
+									return "Emails Sent to Mass List";
+								}
+								//Spam
+								//Other
+								else{
+									return "Other Emails";
+								}
+								
+								
+							});							
+						d3.select("#emails")
+							.text(function (d){
+								//Canvas and Grade
+								if(xPosition < 70){
+									return "2";
+								}
+								//Personal Class and Other Class
+								else if (xPosition < 150){
+									return "3";
+								}
+								//Work Unuseful
+								else if (xPosition < 220) {
+									return "24";
+								}
+								//Work Useful and Advertisements
+								else if (xPosition < 700) {
+									return "3";
+								}
+								//Mass
+								else if (xPosition < 750) {
+									return "4";
+								}
+								//Spam
+								//Other
+								else{
+									return "3";
+								}
+							});
+							
+							
+				
+					
+						
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
+
+					}
+					*/
+				})
+			   .on("mouseout", function() {
+			   
+					//Hide the tooltip
+					d3.select("#tooltip").classed("hidden", true);
+					//purple
+					if (test == 1){
+						//Class Announcements
+						//Grades
+						//Personal Class
+						//Other Class
+						//white
+						//Work - Useful and Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 0;
+						})
+						.style("fill", "rgb(44, 4, 28)");
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 1;
+						})
+						.style("fill", "rgb(96, 26, 53)");
+						
+						//Personal Class
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 2;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//OtherClass
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 3;
+						})
+						.style("fill", "rgb(190, 147, 212)");
+						
+						d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						//Advertisements, Mass, Spam
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+					}
+					else if (test == 2){
+						//Class Announcements
+						//Grades
+						//Personal Class
+						//Other Class
+						//white
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Work - Unuseful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 5;
+						})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						
+						//Work - Useful
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 6;
+						})
+						.style("fill", "rgb(237, 171, 178)");
+						
+						//Advertisements, Mass, Spam
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+					}
+					
+					else if (test == 3){
+						//Class Announcements
+						//Grades
+						//Personal Class
+						//Other Class
+						//white
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Work - Useful and Unuseful
+						d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						//Advertisements = 8
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8;
+						})
+						.style("fill", "rgb(53, 69, 93)");
+						
+						//Mass = 9
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 9;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						
+						//Spam = 10
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 10;
+						})
+						.style("fill", "rgb(191, 209, 223)");
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+					}
+					else {
+					
+						//Class Announcements
+						//Grades
+						//Personal Class
+						//Other Class
+						//white
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i < 4;
+						})
+						.style("fill", "rgb(122, 73, 136)");
+						
+						//Work - Useful and Unuseful
+						d3.selectAll("g")
+							.filter(function(d, i){
+								return i == 5 || i == 6;
+							})
+						.style("fill", "rgb(205, 94, 119)");
+						
+						//Advertisements, Mass, Spam
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 8 || i == 9 || i == 10;
+						})
+						.style("fill", "rgb(146, 177, 182)");
+						
+						d3.selectAll("g")
+						.filter(function(d, i){
+							return i == 12;
+						})
+						.style("fill", "rgb(155, 208, 183)");
+					
+					}
+			   })
+		
+		
+		
+		</script>
+		<div id="heading2">
+			<h2>Email Activity Throughout the Day</h1>
+		</div>
+		<div id="totalEmails">
+			<img class="totalEmailImg" src="Nov12_TotalEmails.png">
+		</div>
+		
+    </body>
+</html>
