@@ -65,6 +65,7 @@ ul{
 
 h1{
 	font-family: sans-serif;
+	margin-bottom: 0;
 }
 
 div.headings{
@@ -131,6 +132,7 @@ h2{
 	padding: 0;
 	font-family: sans-serif;
 	font-size: 20px;
+	font-weight: normal;
 }
 
 #heading2{		grid-area: heading2;		}
