@@ -120,7 +120,7 @@ div.gridbox{
 	grid-template-areas: 'A W1 B W2 C W3 D';
 }
 
-img.totalEmailImg{
+img.totalEmailImg, img.classEmailImg, img.workEmailImg, img.junkEmailImg, img.otherEmailImg{
 	padding-top: 15px;
 	width: 700px;
 }
@@ -132,3 +132,52 @@ h2{
 	font-family: sans-serif;
 	font-size: 20px;
 }
+
+#heading2{		grid-area: heading2;		}
+#timeGraphs{	grid-area: timeGraph;		}
+#options{		grid-area: optionButtons; 	}
+
+#timeEmails{
+	display: grid;
+	grid-template-columns: 750px 200px;
+	grid-template-areas: 
+		'heading2 heading2'
+		'timeGraph optionButtons';
+}
+
+#totalEmails{	display: block;	}
+#classEmails{	display: none;	}
+#workEmails{	display: none;	}
+#junkEmails{	display: none;	}
+#otherEmails{	display: none;	}
+
+button.totalButton, button.classButton, button.workButton, button.junkButton, button.otherButton {
+	padding: 5px 20px;
+	margin: 10px 0px;
+	text-align: center;
+	font-size: 16px;
+}
+
+button.totalButton{
+	background-color: #DD864A;
+	color: white;
+}
+button.classButton {
+	background-color: rgb(122, 73, 136);
+	color: white;
+}
+button.workButton {
+	background-color: rgb(205, 94, 119);
+	color: white;
+}
+
+button.junkButton {
+	background-color: rgb(53, 69, 93);
+	color: white;
+}
+
+button.otherButton {
+	background-color: rgb(96, 125, 59);
+	color: white;
+}
+

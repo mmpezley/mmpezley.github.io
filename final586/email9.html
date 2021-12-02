@@ -10,7 +10,7 @@
     </head>
     <body>
 		<div id="heading">
-			<h1>Email Activity</h1>
+			<h1>Email Activity on November 12th</h1>
 		</div>
 		<div id="tooltip" class="hidden">
 			<p><span id="category">Placeholder</span></p>
@@ -45,9 +45,7 @@
 
 			//Original data
 			var dataset = [
-				{ canvas: 2, grade: 2, personalClass: 3, otherClass: 3, space1: 0.5, workUnuseful: 24, workUseful: 3, space2: 0.5, advertisements: 3, mass: 4, spam: 0, space3: 0.5, other: 3 }//,
-				//{ canvas: 1, grade: 4, personalClass: 1, otherClass: 1, other: 0, advertisements: 0, mass: 2, personal: 0, //workUnuseful: 8, workUseful: 0, spam: 0 },
-				
+				{ canvas: 2, grade: 2, personalClass: 3, otherClass: 3, space1: 0.5, workUnuseful: 24, workUseful: 3, space2: 0.5, advertisements: 3, mass: 4, spam: 0, space3: 0.5, other: 3 }//,				
 			];
 
 			//Set up stack method
@@ -74,8 +72,6 @@
 			//Easy colors accessible via a 10-step ordinal scale
 			var colors = d3.scaleOrdinal(d3.schemeCategory10);
 
-			
-		
 			//Create SVG element
 			var svg = d3.select("body")
 						.append("svg")
@@ -88,58 +84,28 @@
 				.enter()
 				.append("g")
 				.attr("fill", function(d, i){
-					/*
-					//Canvas
-					if (i == 0 ){
-						return "rgb(44, 4, 28)";
-					}
-					//Grades
-					else if (i == 1){
-						return "rgb(96, 26, 53)";
-					}
-					*/
-					//Personal Class
+					//Classes
 					if (i < 4){
 						return "rgb(122, 73, 136)";
 					}
-					//OtherClass
-					//else if (i == 3){
-					//	return "rgb(190, 147, 212)";
-					//}
-					//Personal
-					//else if (i == 4){
-					//	return "rgb(155, 208, 183)";
-						//"rgb(248, 223, 129)";
-						//"rgb(246, 170, 144)";
-						//"rgb(195, 111, 49)"; 
-					//}
+					//white space
 					else if (i==4){
 						return "white"
 					}
-					//Work - Unuseful 
+					//Work 
 					else if (i < 7) {
 					
 						return "rgb(205, 94, 119)";
 					}
-					//Work - Useful
-					//else if (i == 6){
-					//	return "rgb(237, 171, 178)";
-					//}
+					//white space
 					else if (i == 7){
 						return "white"
 					}
-					//Advertisements
-					//else if (i == 8) {
-					//	return "rgb(53, 69, 93)";
-					//}
-					//Mass
+					//Junk
 					else if (i < 10) {
 						return "rgb(146, 177, 182)";
 					}
-					//Spam
-					//else if (i == 10) {
-					//	return "rgb(191, 209, 223)";
-					//}
+					//white space
 					else if (i==11){
 						return "white"
 					}
@@ -147,8 +113,6 @@
 					else {	
 						return "rgb(155, 208, 183)";
 					}
-					
-					//rgb(161, 4, 90) -> magenta
 				});
 	
 			// Add a rect for each data value
@@ -172,7 +136,6 @@
 			   
 			   })
 			   .on("click", function(d){
-					console.log(d3.select("g").attr("fill"));
 					var change = 0;
 					
 					//purple
@@ -248,83 +211,28 @@
 						})
 						.style("fill", "rgb(205, 94, 119)");
 						
-						/*
-						//Work - Useful
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 6;
-						})
-						.style("fill", "rgb(205, 94, 119)");
-						*/
-						
 						//Advertisements = 8
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 8 || i == 9 || i == 10;
 						})
 						.style("fill", "rgb(146, 177, 182)");
-						//Mass = 9
-						//rgb(146, 177, 182)
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 9;
-						})
-						.style("fill", "rgb(146, 177, 182)");
-						*/
-						
-						//Spam = 10
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 10;
-						})
-						.style("fill", "rgb(146, 177, 182)");
-						*/
-						
+					
 						//Other = 12
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
 						})
-						.style("fill", "rgb(155, 208, 183)");
-						
-						//rgb(155, 208, 183)
-						
+						.style("fill", "rgb(155, 208, 183)");						
 					}
 					else if (change == 2){
 						d3.selectAll("g")
-						//Canvas
-						/*
-						.filter(function(d, i){
-							return i == 0;
-						})
-						.style("fill", "rgb(44, 4, 28)");
-						*/
-						//Grades
+						//Classes
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
 						})
 						.style("fill", "rgb(122, 73, 136)");
-						
-						//Personal Class
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 2;
-						})
-						.style("fill", "rgb(122, 73, 136)");
-						*/
-						
-						//OtherClass
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 3;
-						})
-						.style("fill", "rgb(190, 147, 212)");
-						*/
 						
 						//Work - Unuseful
 						d3.selectAll("g")
@@ -333,7 +241,6 @@
 						})
 						.style("fill", "rgb(205, 94, 119)");
 						
-						
 						//Work - Useful
 						d3.selectAll("g")
 						.filter(function(d, i){
@@ -341,90 +248,35 @@
 						})
 						.style("fill", "rgb(237, 171, 178)");
 						
-						
-						//Advertisements = 8
+						//Junk
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 8 || i == 9 || i == 10;
 						})
 						.style("fill", "rgb(146, 177, 182)");
-						//Mass = 9
-						//rgb(146, 177, 182)
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 9;
-						})
-						.style("fill", "rgb(146, 177, 182)");
-						*/
 						
-						//Spam = 10
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 10;
-						})
-						.style("fill", "rgb(146, 177, 182)");
-						*/
-						
-						//Other = 12
+						//Other 
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
 						})
 						.style("fill", "rgb(155, 208, 183)");
-						
-						//rgb(155, 208, 183)
 					}
 					else if (change == 3){
 						d3.selectAll("g")
-						//Canvas
-						/*
-						.filter(function(d, i){
-							return i == 0;
-						})
-						.style("fill", "rgb(44, 4, 28)");
-						*/
-						//Grades
+						//Classes
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
 						})
 						.style("fill", "rgb(122, 73, 136)");
 						
-						//Personal Class
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 2;
-						})
-						.style("fill", "rgb(122, 73, 136)");
-						*/
-						
-						//OtherClass
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 3;
-						})
-						.style("fill", "rgb(190, 147, 212)");
-						*/
-						
-						//Work - Unuseful
+						//Work
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 5 || i == 6;
 						})
 						.style("fill", "rgb(205, 94, 119)");
-						
-						/*
-						//Work - Useful
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 6;
-						})
-						.style("fill", "rgb(237, 171, 178)");
-						*/
 						
 						//Advertisements = 8
 						d3.selectAll("g")
@@ -440,7 +292,6 @@
 						})
 						.style("fill", "rgb(146, 177, 182)");
 						
-						
 						//Spam = 10
 						d3.selectAll("g")
 						.filter(function(d, i){
@@ -454,109 +305,45 @@
 							return i == 12;
 						})
 						.style("fill", "rgb(155, 208, 183)");
-						
-						//rgb(155, 208, 183)
 					}
 					else {
 						d3.selectAll("g")
-						//Canvas
-						/*
-						.filter(function(d, i){
-							return i == 0;
-						})
-						.style("fill", "rgb(44, 4, 28)");
-						*/
-						//Grades
+						//Class
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
 						})
 						.style("fill", "rgb(122, 73, 136)");
 						
-						//Personal Class
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 2;
-						})
-						.style("fill", "rgb(122, 73, 136)");
-						*/
-						
-						//OtherClass
-						/*
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 3;
-						})
-						.style("fill", "rgb(190, 147, 212)");
-						*/
-						
-						//Work - Unuseful
+						//Work
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 5 || i == 6;
 						})
 						.style("fill", "rgb(205, 94, 119)");
 						
-						/*
-						//Work - Useful
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 6;
-						})
-						.style("fill", "rgb(237, 171, 178)");
-						*/
-						
-						//Advertisements = 8
+						//Junk
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 8 || i == 9 || i == 10;
 						})
 						.style("fill", "rgb(146, 177, 182)");
-						/*
-						//Advertisements = 8
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 8;
-						})
-						.style("fill", "rgb(53, 69, 93)");
 						
-						//Mass = 9
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 9;
-						})
-						.style("fill", "rgb(146, 177, 182)");
-						
-						
-						//Spam = 10
-						d3.selectAll("g")
-						.filter(function(d, i){
-							return i == 10;
-						})
-						.style("fill", "rgb(191, 209, 223)");
-						*/
 						//Other = 12
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
 						})
 						.style("fill", "rgb(155, 208, 183)");
-						
-						//rgb(155, 208, 183)
 					}
-					console.log("change = " + change);
 			   })
 			   
 			   .on("mouseover", function(d) {
-
-					//console.log(d);
 					//Get this bar's x/y values, then augment for the tooltip
 					var xPosition = parseFloat(d3.select(this).attr("x")) + 25;// + xScale.bandwidth() / 2;
 					var yPosition = parseFloat(d3.select(this).attr("y")) / 2 +165;// + h / 2;
 
 
-					//var white = false;
 					if (xPosition > 170){
 						if (xPosition < 205){
 							whiteBoolean = true;
@@ -571,27 +358,7 @@
 						if (xPosition < 820){
 							whiteBoolean = true;
 						}
-					}
-					
-					/*
-					if (test == 0){
-						console.log("white")
-					}
-					else if (test == 1){
-						console.log("purple")
-					}
-					else if (test == 2) {
-						console.log("pink")
-					}
-					else if (test == 3){
-						console.log("blue")
-					}
-					else {
-						console.log("green")
-					}
-					*/
-					
-						
+					}						
 					
 					if (whiteBoolean == true){
 						d3.select(this).classed("hidden", true);						
@@ -682,23 +449,14 @@
 								else if (xPosition < 150){
 									return "Other Class Emails";
 								}
-								//Work Unuseful
-								//else if (xPosition < 220) {
-								//	return "Work - Not Related to Me";
-								//}
-								//Work Useful 
+								//Work 
 								else if (xPosition < 650) {
 									return "Work";
 								}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "Advertisements";
-								//}
-								//Mass
+								//Junk
 								else if (xPosition < 750) {
 									return "Junk";
 								}
-								//Spam
 								//Other
 								else{
 									return "Other Emails";
@@ -720,25 +478,16 @@
 								else if (xPosition < 650) {
 									return "27";
 								}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "3";
-								//}
 								//Junk
 								else if (xPosition < 750) {
 									return "7";
 								}
-								//Spam
 								//Other
 								else{
 									return "3";
 								}
 							});
 							
-							
-				
-					
-						
 						//Show the tooltip
 						d3.select("#tooltip").classed("hidden", false);
 					}
@@ -793,21 +542,7 @@
 						.enter()
 						d3.select("#category")
 							.text(function(d){
-								//Canvas
-								/*
-								if(xPosition < 50){
-									return "Class Announcements";
-								}
-								//Grade
-								else if (xPosition < 70){
-									return "Notification of New Grade Posting";
-								}
-								//Personal Class
-								else if (xPosition < 100){
-									return "From Professor Personally to Me"
-								}
-								*/
-								//Other Class
+								//Class
 								if (xPosition < 150){
 									return "Class";
 								}
@@ -819,31 +554,18 @@
 								else if (xPosition < 650) {
 									return "Work - Directly Related to Me";
 								}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "Advertisements";
-								//}
-								//Mass
+								//Junk
 								else if (xPosition < 750) {
 									return "Junk";
 								}
-								//Spam
 								//Other
 								else{
 									return "Other Emails";
 								}
-								
-								
 							});							
 						d3.select("#emails")
 							.text(function (d){
-								//Canvas and Grade
-								/*
-								if(xPosition < 70){
-									return "2";
-								}
-								*/
-								//Personal Class and Other Class
+								//Class
 								if (xPosition < 150){
 									return "10";
 								}
@@ -855,29 +577,16 @@
 								else if (xPosition < 650) {
 									return "3";
 								}
-								//Work 
-								//else if (xPosition < 650) {
-								//	return "27";
-								//}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "3";
-								//}
 								//Junk
 								else if (xPosition < 750) {
 									return "7";
 								}
-								//Spam
 								//Other
 								else{
 									return "3";
 								}
 							});
 							
-							
-				
-					
-						
 						//Show the tooltip
 						d3.select("#tooltip").classed("hidden", false);
 					}
@@ -933,29 +642,11 @@
 						.enter()
 						d3.select("#category")
 							.text(function(d){
-								//Canvas
-								/*
-								if(xPosition < 50){
-									return "Class Announcements";
-								}
-								//Grade
-								else if (xPosition < 70){
-									return "Notification of New Grade Posting";
-								}
-								//Personal Class
-								else if (xPosition < 100){
-									return "From Professor Personally to Me"
-								}
-								*/
-								//Other Class
+								//Class
 								if (xPosition < 150){
 									return "Class";
 								}
-								//Work Unuseful
-								//else if (xPosition < 220) {
-								//	return "Work - Not Related to Me";
-								//}
-								//Work Useful 
+								//Work
 								else if (xPosition < 650) {
 									return "Work";
 								}
@@ -967,23 +658,14 @@
 								else if (xPosition < 750) {
 									return "Emails Sent to Mass List";
 								}
-								//Spam
 								//Other
 								else{
 									return "Other Emails";
 								}
-								
-								
 							});							
 						d3.select("#emails")
 							.text(function (d){
-								//Canvas and Grade
-								/*
-								if(xPosition < 70){
-									return "2";
-								}
-								*/
-								//Personal Class and Other Class
+								//Class
 								if (xPosition < 150){
 									return "10";
 								}
@@ -999,17 +681,11 @@
 								else if (xPosition < 750) {
 									return "4";
 								}
-								//Spam
 								//Other
 								else{
 									return "3";
 								}
 							});
-							
-							
-				
-					
-						
 						//Show the tooltip
 						d3.select("#tooltip").classed("hidden", false);
 					}
@@ -1057,41 +733,18 @@
 						.enter()
 						d3.select("#category")
 							.text(function(d){
-								//Canvas
-								/*
-								if(xPosition < 50){
-									return "Class Announcements";
-								}
-								//Grade
-								else if (xPosition < 70){
-									return "Notification of New Grade Posting";
-								}
-								//Personal Class
-								else if (xPosition < 100){
-									return "From Professor Personally to Me"
-								}
-								*/
-								//Other Class
+								//Class
 								if (xPosition < 150){
 									return "Class";
 								}
-								//Work Unuseful
-								//else if (xPosition < 220) {
-								//	return "Work - Not Related to Me";
-								//}
-								//Work Useful 
+								//Work 
 								else if (xPosition < 650) {
 									return "Work";
 								}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "Advertisements";
-								//}
-								//Mass
+								//Junk
 								else if (xPosition < 750) {
 									return "Junk";
 								}
-								//Spam
 								//Other
 								else{
 									return "Other Emails";
@@ -1101,13 +754,7 @@
 							});							
 						d3.select("#emails")
 							.text(function (d){
-								//Canvas and Grade
-								/*
-								if(xPosition < 70){
-									return "2";
-								}
-								*/
-								//Personal Class and Other Class
+								//Class
 								if (xPosition < 150){
 									return "10";
 								}
@@ -1115,15 +762,10 @@
 								else if (xPosition < 650) {
 									return "27";
 								}
-								//Advertisements
-								//else if (xPosition < 700) {
-								//	return "3";
-								//}
 								//Junk
 								else if (xPosition < 750) {
 									return "7";
 								}
-								//Spam
 								//Other
 								else{
 									return "3";
@@ -1132,93 +774,6 @@
 						//Show the tooltip
 						d3.select("#tooltip").classed("hidden", false);
 					}
-					/*
-					else{
-						//Update the tooltip position and value
-						d3.select("#tooltip")
-							.style("left", xPosition + "px")
-							.style("top", yPosition + "px")	
-							.enter()
-						d3.select("#category")
-							.text(function(d){
-								//Canvas
-								if(xPosition < 50){
-									return "Class Announcements";
-								}
-								//Grade
-								else if (xPosition < 70){
-									return "Notification of New Grade Posting";
-								}
-								//Personal Class
-								else if (xPosition < 100){
-									return "From Professor Personally to Me"
-								}
-								//Other Class
-								else if (xPosition < 150){
-									return "Other Class Emails";
-								}
-								//Work Unuseful
-								else if (xPosition < 220) {
-									return "Work - Not Related to Me";
-								}
-								//Work Useful 
-								else if (xPosition < 650) {
-									return "Work - Directly Related to Me";
-								}
-								//Advertisements
-								else if (xPosition < 700) {
-									return "Advertisements";
-								}
-								//Mass
-								else if (xPosition < 750) {
-									return "Emails Sent to Mass List";
-								}
-								//Spam
-								//Other
-								else{
-									return "Other Emails";
-								}
-								
-								
-							});							
-						d3.select("#emails")
-							.text(function (d){
-								//Canvas and Grade
-								if(xPosition < 70){
-									return "2";
-								}
-								//Personal Class and Other Class
-								else if (xPosition < 150){
-									return "3";
-								}
-								//Work Unuseful
-								else if (xPosition < 220) {
-									return "24";
-								}
-								//Work Useful and Advertisements
-								else if (xPosition < 700) {
-									return "3";
-								}
-								//Mass
-								else if (xPosition < 750) {
-									return "4";
-								}
-								//Spam
-								//Other
-								else{
-									return "3";
-								}
-							});
-							
-							
-				
-					
-						
-						//Show the tooltip
-						d3.select("#tooltip").classed("hidden", false);
-
-					}
-					*/
 				})
 			   .on("mouseout", function() {
 			   
@@ -1227,17 +782,13 @@
 					//purple
 					if (test == 1){
 						//Class Announcements
-						//Grades
-						//Personal Class
-						//Other Class
-						//white
-						//Work - Useful and Unuseful
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 0;
 						})
 						.style("fill", "rgb(44, 4, 28)");
 						
+						//Grades
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 1;
@@ -1258,6 +809,7 @@
 						})
 						.style("fill", "rgb(190, 147, 212)");
 						
+						//Work
 						d3.selectAll("g")
 							.filter(function(d, i){
 								return i == 5 || i == 6;
@@ -1271,6 +823,7 @@
 						})
 						.style("fill", "rgb(146, 177, 182)");
 						
+						//Other
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
@@ -1278,12 +831,7 @@
 						.style("fill", "rgb(155, 208, 183)");
 					}
 					else if (test == 2){
-						//Class Announcements
-						//Grades
-						//Personal Class
-						//Other Class
-						//white
-						
+						//Class
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
@@ -1296,7 +844,6 @@
 							return i == 5;
 						})
 						.style("fill", "rgb(205, 94, 119)");
-						
 						
 						//Work - Useful
 						d3.selectAll("g")
@@ -1312,6 +859,7 @@
 						})
 						.style("fill", "rgb(146, 177, 182)");
 						
+						//Other
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
@@ -1320,12 +868,7 @@
 					}
 					
 					else if (test == 3){
-						//Class Announcements
-						//Grades
-						//Personal Class
-						//Other Class
-						//white
-						
+						//Class
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
@@ -1361,6 +904,7 @@
 						})
 						.style("fill", "rgb(191, 209, 223)");
 						
+						//Other
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
@@ -1368,13 +912,7 @@
 						.style("fill", "rgb(155, 208, 183)");
 					}
 					else {
-					
-						//Class Announcements
-						//Grades
-						//Personal Class
-						//Other Class
-						//white
-						
+						//Class
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i < 4;
@@ -1395,24 +933,124 @@
 						})
 						.style("fill", "rgb(146, 177, 182)");
 						
+						//Other
 						d3.selectAll("g")
 						.filter(function(d, i){
 							return i == 12;
 						})
 						.style("fill", "rgb(155, 208, 183)");
-					
 					}
 			   })
 		
 		
 		
 		</script>
-		<div id="heading2">
-			<h2>Email Activity Throughout the Day</h1>
-		</div>
-		<div id="totalEmails">
-			<img class="totalEmailImg" src="Nov12_TotalEmails.png">
+		<div id="timeEmails">
+			<div id="heading2">
+				<h2>Emails Received Throughout the Day</h2>
+			</div>
+			<div id="timeGraphs">
+				<div id="totalEmails">
+					<img class="totalEmailImg" src="Nov12_TotalEmails.png">
+				</div>
+				<div id="classEmails">
+					<img class="classEmailImg" src="Nov12_ClassEmails.png">
+				</div>
+				<div id="workEmails">
+					<img class="workEmailImg" src="Nov12_WorkEmails.png">
+				</div>
+				<div id="junkEmails">
+					<img class="junkEmailImg" src="Nov12_JunkEmails.png">
+				</div>
+				<div id="otherEmails">
+					<img class="otherEmailImg" src="Nov12_OtherEmails.png">
+				</div>
+			</div>
+			<div id="options">
+				<div id="classesGraphButton">
+					<div id="totalButtonSection">
+						<button class="totalButton" onclick="totalFunction()">All Emails</button>
+					</div>
+					<div id="classButtonSection">
+						<button class="classButton" onclick="classFunction()">Class Emails</button>
+					</div>
+					<div id="workButtonSection">
+						<button class="workButton" onclick="workFunction()">Work Emails</button>
+					</div>
+					<div id="junkButtonSection">
+						<button class="junkButton" onclick="junkFunction()">Junk Emails</button>
+					</div>
+					<div id="otherButtonSection">
+						<button class="otherButton" onclick="otherFunction()">Other Emails</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		
+		<script type="text/javascript">
+			function totalFunction(){
+				var one = document.getElementById("totalEmails");
+				one.style.display = "block";
+				var two = document.getElementById("classEmails");
+				two.style.display = "none";
+				var three = document.getElementById("workEmails");
+				three.style.display = "none";
+				var four = document.getElementById("junkEmails");
+				four.style.display = "none";
+				var five = document.getElementById("otherEmails");
+				five.style.display = "none";
+			}
+			function classFunction(){
+				var one = document.getElementById("totalEmails");
+				one.style.display = "none";
+				var two = document.getElementById("classEmails");
+				two.style.display = "block";
+				var three = document.getElementById("workEmails");
+				three.style.display = "none";
+				var four = document.getElementById("junkEmails");
+				four.style.display = "none";
+				var five = document.getElementById("otherEmails");
+				five.style.display = "none";
+			}
+			function workFunction(){
+				var one = document.getElementById("totalEmails");
+				one.style.display = "none";
+				var two = document.getElementById("classEmails");
+				two.style.display = "none";
+				var three = document.getElementById("workEmails");
+				three.style.display = "block";
+				var four = document.getElementById("junkEmails");
+				four.style.display = "none";
+				var five = document.getElementById("otherEmails");
+				five.style.display = "none";
+			}
+			function junkFunction(){
+				var one = document.getElementById("totalEmails");
+				one.style.display = "none";
+				var two = document.getElementById("classEmails");
+				two.style.display = "none";
+				var three = document.getElementById("workEmails");
+				three.style.display = "none";
+				var four = document.getElementById("junkEmails");
+				four.style.display = "block";
+				var five = document.getElementById("otherEmails");
+				five.style.display = "none";					
+					
+			}
+			function otherFunction(){
+				var one = document.getElementById("totalEmails");
+				one.style.display = "none";
+				var two = document.getElementById("classEmails");
+				two.style.display = "none";
+				var three = document.getElementById("workEmails");
+				three.style.display = "none";
+				var four = document.getElementById("junkEmails");
+				four.style.display = "none";
+				var five = document.getElementById("otherEmails");
+				five.style.display = "block";
+				
+			}
+		
+		</script>
     </body>
 </html>
