@@ -146,8 +146,9 @@ div.webclass1{ grid-area: webclass1; }
 
 div.winnie{ grid-area: winnie; }
 div.head{ grid-area: head;}
-div.home{ grid-area: home;}
-div.introduction {grid-area: introduction;}
+/*div.home{ grid-area: home;}*/
+div.introduction {grid-area: introduction; 
+	margin-bottom: 2.25em;}
 
 div.contact{
 	text-align: center;
@@ -202,11 +203,20 @@ div.experiences{
 		"II"
 }
 
-img.scorecardtemp, img.article, img.instagram, img.yeti, img.headshot, img.grove{
+img.scorecardtemp, img.article, img.instagram, img.yeti, img.grove{
 	display: block;
 	width: 300px;
 	float: center;
 	margin: 1.5em auto;
+}
+img.headshot{
+	display: block;
+	width: 40%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 300px;
 }
 
 p.quote, p.quoteI{
@@ -323,7 +333,7 @@ p.linkexp{
 	font-size: 1.5em;
 }
 
-img.headshot{ width: 300px; }
+/*img.headshot{ width: 300px; }*/
 
 @media screen and (min-width: 675px){
 	h1{ 
@@ -452,18 +462,20 @@ img.headshot{ width: 300px; }
 	
 	div.johndeere1, div.johndeere3, div.johndeere5, div.sofirst1 { margin-bottom: 0.25in; }
 	
+	/*
 	img.headshot{
 		margin: 1em 4em 2em 0em;
-	}
+	}*/
 
-	div.home{
+	/*div.home{
 		display: grid;
 		align-items: top;
 		grid-template-columns: 1fr 2fr;
 		grid-template-areas:
-			"head introduction"
+			"head head"
+			"introduction introduction"
 			"winnie winnie"		
-	}
+	}*/
 	
 }
 
