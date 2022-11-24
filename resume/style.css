@@ -72,6 +72,10 @@ div.BB{
 }
 
 div.D{ grid-area: D; }
+div.Da {grid-area: Da; }
+div.Db{ grid-area: Db; }
+div.Dc{ grid-area: Dc; }
+
 div.DD{	grid-area: DD; }
 div.E{ grid-area: E; }
 
@@ -192,6 +196,9 @@ div.experiences{
 	grid-template-columns: auto;
 	grid-template-areas:
 		"DD"
+		"Db"
+		"Da"
+		"Dc"
 		"E"
 		"D"
 		"EE"
@@ -383,6 +390,8 @@ p.linkexp{
 		grid-template-columns: 30% 70%;
 		grid-template-areas:
 			"DD DD"
+			"Da Db"
+			"Da Dc"
 			"D E"
 			"D EE"
 			"F G"
