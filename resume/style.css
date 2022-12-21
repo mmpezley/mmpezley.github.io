@@ -140,6 +140,8 @@ div.johndeere2{ grid-area: johndeere2; }
 div.johndeere3{ grid-area: johndeere3; }
 div.johndeere4{ grid-area: johndeere4; }
 div.johndeere5{ grid-area: johndeere5; }
+div.engl505a{ grid-area: engl505a; }
+div.engl505b{ grid-area: engl505b; }
 div.sofirst{ grid-area: sofirst; }
 div.sofirst1{ grid-area: sofirst1; }
 div.sofirst2{ grid-area: sofirst2; }
@@ -147,6 +149,17 @@ div.robotics{ grid-area: robotics; }
 div.robotics1{ grid-area: robotics1; }
 div.webclass{ grid-area: webclass; }
 div.webclass1{ grid-area: webclass1; }
+
+div.engl505links{ grid-area: engl505links; }
+div.links_title_assign{ grid-area: links_title_assign; }
+div.personas_assign{ grid-area: personas_assign; }
+div.stakeholder_assign{ grid-area: stakeholder_assign; }
+div.original_robotic_club_site{ grid-area: original_robotic_club_site; }
+div.usability_test1_assign{ grid-area: usability_test1_assign; }
+div.figma_prototype_assign{ grid-area: figma_prototype_assign; }
+div.usability_test2_assign{ grid-area: usability_test2_assign; }
+div.memo_redesign_assign{ grid-area: memo_redesign_assign; }
+div.finalsite_assign{ grid-area: finalsite_assign; }
 
 div.winnie{ grid-area: winnie; }
 div.head{ grid-area: head;}
@@ -208,6 +221,18 @@ div.experiences{
 		"I"
 		"H"
 		"II"
+}
+
+div.engl505links{
+	display: grid;
+	align-items: top;
+	grid-template-columns: auto;
+	grid-template-areas:
+		"links_title_assign links_title_assign"
+		"personas_assign figma_prototype_assign"
+		"stakeholder_assign usability_test2_assign"
+		"original_robotic_club_site memo_redesign_assign"
+		"usability_test1_assign finalsite_assign"
 }
 
 img.scorecardtemp, img.article, img.instagram, img.yeti, img.grove{
@@ -334,10 +359,20 @@ a:hover {
 	text-decoration: underline;
 }
 
-p.linkexp{
+p.linkexp, p.linkexp2{
 	text-align: center;
 	font-style: italic;
 	font-size: 1.5em;
+}
+
+p.linkexp2{
+	text-decoration: underline;
+}
+
+p.linkexp3 {
+	/*text-align: center;*/
+	font-style: italic;
+	font-size: 1.25em;
 }
 
 /*img.headshot{ width: 300px; }*/
@@ -448,6 +483,8 @@ p.linkexp{
 		align-items: top;
 		grid-template-columns: 1fr;
 		grid-template-areas:
+			"engl505a"
+			"engl505b"
 			"johndeere4"
 			"johndeere5"
 			"johndeere"
