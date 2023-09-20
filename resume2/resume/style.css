@@ -391,11 +391,16 @@ p.experienceText {
 	margin-top: 0;
 }
 
-img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium {
+img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge {
 	display: block;
 	float: center;
 	margin: 1em auto;
 }
+
+img.expereincePhotoLarge {
+	width: 93%
+}
+
 img.expereincePhoto {
 	width: 80%;
 }
@@ -424,6 +429,7 @@ div.experiences{
 		"roboticsClub"
 		"sharePointSite"
 		"scorecard"
+		"otherWork"
 }
 
 h2.roboticsClubTitle {
@@ -449,13 +455,28 @@ div.photoColumns2{
 		"photo22"
 }
 
-div.navTitle		{ grid-area: navTitle; }
-div.apiOwnersLink	{ grid-area: apiOwnersLink; }
-div.roboticsLink	{ grid-area: roboticsLink; }
-div.sharePointLink	{ grid-area: sharePointLink; }
-div.sharePointLink2	{ grid-area: sharePointLink2; }
-div.sharePointLink3 { grid-area: sharePointLink3; }
-div.scorecardLink	{ grid-area: scorecardLink; }
+div.navTitle					{ grid-area: navTitle; }
+div.apiOwnersLink				{ grid-area: apiOwnersLink; }
+div.roboticsLink				{ grid-area: roboticsLink; }
+div.sharePointLink				{ grid-area: sharePointLink; }
+div.sharePointLink2				{ grid-area: sharePointLink2; }
+div.sharePointLink3 			{ grid-area: sharePointLink3; }
+div.scorecardLink				{ grid-area: scorecardLink; }
+div.otherWork					{ grid-area: otherWork; }
+
+div.socialMediaSOFIRST			{ grid-area: socialMediaSOFIRST; }
+div.PR							{ grid-area: PR; }
+div.htmlCss						{ grid-area: htmlCss; }
+div.corpCommunication			{ grid-area: corpCommunication; }
+
+div.otherExperienceExamples{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas:
+			"htmlCss htmlCss socialMediaSOFIRST"
+			"PR corpCommunication corpCommunication"
+	}
 
 video{
 	width: 85%;
@@ -465,7 +486,6 @@ video{
 	float: center;
 	margin: 1em auto;
 }
-	
 
 @media screen and (min-width: 675px){
 	h1{ 
@@ -636,6 +656,15 @@ video{
 			"photo1 photo2"
 	}
 	
+	div.otherExperienceExamples{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 33% 33% 34%;
+		grid-template-areas:
+			"htmlCss htmlCss socialMediaSOFIRST"
+			"PR corpCommunication corpCommunication"
+	}
+	
 	div.photo22{
 		display: block;
 	}
@@ -652,6 +681,7 @@ video{
 		grid-template-areas:
 			"apiOwnershipPage roboticsClub"
 			"sharePointSite scorecard"
+			"otherWork otherWork"
 	}
 	
 	h2.roboticsClubTitle {
@@ -725,6 +755,7 @@ video{
 			"navTitle navTitle navTitle"
 			"roboticsLink sharePointLink3 scorecardLink"
 	}
+
 	
 }
 
