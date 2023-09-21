@@ -243,7 +243,7 @@ img.scorecardtemp, img.article, img.instagram, img.yeti, img.grove{
 }
 img.headshot{
 	display: block;
-	width: 40%;
+	width: 30%;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	margin-left: auto;
@@ -252,9 +252,10 @@ img.headshot{
 }
 
 p.quote, p.quoteI{
-	font-family: "Lovely font demo";
+	/*font-family: "Lovely font demo";*/
 	text-align: center;
-	font-size: 16pt;
+	font-size: 14pt;
+	font-style: italic;
 }
 p.quote{ margin-bottom: 0.1em; }
 p.quoteI{ margin: 0.1em auto; }
@@ -264,8 +265,7 @@ p.author{
 }
 
 html{
-	background-image: url(background3.png);
-	background-color: #EED6D3;
+	background-color: #E8C6C6;
 	background-size: 250px;
 	padding-left: 0.5in;
 	padding-right: 0.5in;
@@ -288,6 +288,11 @@ h2{
 }
 
 h2.name{ border:none; }
+h2.experienceTitle, h2.roboticsClubTitle {
+	border-bottom: none;
+	border-top:dashed 2px #B9B7BD;
+	padding-top: 0.15in;
+}
 
 h2.title{
 	border-top: solid 2px #988E92;
@@ -369,19 +374,130 @@ p.linkexp2{
 	text-decoration: underline;
 }
 
-p.linkexp3 {
+
+p.linkexp3, p.linkexp4 {
 	/*text-align: center;*/
 	font-style: italic;
 	font-size: 1.25em;
 }
 
+p.linkexp4 {
+	text-align: center;
+}
+
 /*img.headshot{ width: 300px; }*/
+
+p.experienceText {
+	margin-top: 0;
+}
+
+img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge, img.expereincePhotoMedium2 {
+	display: block;
+	float: center;
+	margin: 1em auto;
+}
+
+img.expereincePhotoLarge {
+	width: 93%
+}
+
+img.expereincePhoto {
+	width: 80%;
+}
+img.expereincePhotoSmall {
+	width: 50%;
+}
+img.expereincePhotoMedium {
+	width: 65%;
+}
+
+img.expereincePhotoMedium2 {
+	width: 73%;
+}
+
+div.persona2, div.photo22{
+	display: none;
+}
+
+div.photoColumns, div.personaImages, div.photoColumns2, div.experiences{
+	display: grid;
+	align-items: top;
+	grid-template-columns: auto;
+}
+
+div.experiences{
+	padding-top: 0.25in;
+	padding-bottom: 0.35in;
+	grid-template-areas:
+		"apiOwnershipPage"
+		"roboticsClub"
+		"sharePointSite"
+		"scorecard"
+		"otherWork"
+}
+
+h2.roboticsClubTitle {
+	border-bottom: none;
+	border-top:dashed 2px #B9B7BD;
+	padding-top: 0.15in;
+}
+
+div.personaImages{
+	grid-template-areas:
+		"persona1"
+}
+
+div.photoColumns{
+	grid-template-areas:
+		"photo1"
+		"photo2"
+}
+
+div.photoColumns2{
+	grid-template-areas:
+		"photo12"
+		"photo22"
+}
+
+div.navTitle			{ grid-area: navTitle; }
+div.apiOwnersLink		{ grid-area: apiOwnersLink; }
+div.roboticsLink		{ grid-area: roboticsLink; }
+div.sharePointLink		{ grid-area: sharePointLink; }
+div.sharePointLink2		{ grid-area: sharePointLink2; }
+div.sharePointLink3 	{ grid-area: sharePointLink3; }
+div.scorecardLink		{ grid-area: scorecardLink; }
+div.otherWork			{ grid-area: otherWork; }
+
+div.dawnFoods			{ grid-area: dawnFoods; }
+div.PR					{ grid-area: PR; }
+div.htmlCss				{ grid-area: htmlCss; }
+div.corpCommunication	{ grid-area: corpCommunication; }
+
+div.otherExperienceExamples{
+		display: grid;
+		align-items: top;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"htmlCss"
+			"dawnFoods"
+			"corpCommunication"
+			"PR"
+	}
+
+video{
+	width: 85%;
+	min-width: 300px;
+	height: auto;
+	display: block;
+	float: center;
+	margin: 1em auto;
+}
 
 @media screen and (min-width: 675px){
 	h1{ 
 		font-size: 60pt; 
 	}
-	p.quote, p.quoteI{ font-size: 25pt;}
+	p.quote, p.quoteI{ font-size: 16pt;}
 	div.skills{
 		padding-bottom: 0.5em;
 		display: grid;
@@ -396,6 +512,18 @@ p.linkexp3 {
 	
 	div.K, div.M, div.O{ border-left: solid 1px #988E92; }
 	div.N{ border-bottom: none;}
+	
+	div.personaImages{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 50% 50%;
+		grid-template-areas:
+			"persona1 persona2"
+	}
+	div.persona2{
+		display: block;
+	}
+
 }	
 	
 @media screen and (min-width: 800px){
@@ -522,6 +650,118 @@ p.linkexp3 {
 			"introduction introduction"
 			"winnie winnie"		
 	}*/
+	
+	div.photoColumns, div.experiences{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 50% 50%;
+	}
+		
+	div.photoColumns{
+		grid-template-areas:
+			"photo1 photo2"
+	}
+	
+	div.otherExperienceExamples{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 33% 33% 34%;
+		grid-template-areas:
+			"htmlCss htmlCss dawnFoods"
+			"PR corpCommunication corpCommunication"
+	}
+	
+	div.photo22{
+		display: block;
+	}
+	
+	div.photoColumns2{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 84% 16%;
+		grid-template-areas:
+			"photo12 photo22"
+	}
+	
+	div.experiences{
+		grid-template-areas:
+			"apiOwnershipPage roboticsClub"
+			"sharePointSite scorecard"
+			"otherWork otherWork"
+	}
+	
+	h2.roboticsClubTitle {
+		border-bottom: none;
+		border-top:none;
+		padding-top: 0;
+	}
+	
+	h3.experienceHead {
+		border-top: dashed 2px #B9B7BD;
+		padding-top: 0.15in;
+	}
+
+	div.roboticsClub, div.scorecard{
+		border-left: dashed 2px #B9B7BD;
+		padding-left: 0.15in;
+	}
+
+	div.apiOwnershipPage, div.sharePointSite {
+		padding-right: 0.15in;
+	}
+	
+	div.navExperienceRobotics, div.navExperienceScorecard, div.navExperienceSharePoint, div.navExperienceAPIOwnership {
+		display: grid;
+		align-items: top;
+		grid-template-columns: 33% 33% 33%;
+		margin-bottom: 0.25in;
+	}
+	
+	div.navTitle {
+		padding-bottom: 0.15in;
+	}
+	div.apiOwnersLink {
+		border-right: dashed 2px #B9B7BD;
+		padding-right: 0.15in;
+	}
+	
+	div.scorecardLink, div.sharePointLink, div.sharePointLink3 {
+		border-left: dashed 2px #B9B7BD;
+		padding-left: 0.15in;
+	}
+	
+	div.sharePointLink3 {
+		padding-right: 0.15in;
+	}
+	
+	p.experienceNavBottom {
+		margin-top: 0.15in;
+	}
+		
+	div.navExperienceRobotics{
+		grid-template-areas:
+			"navTitle navTitle navTitle"
+			"apiOwnersLink sharePointLink2 scorecardLink"
+	}
+	
+	div.navExperienceScorecard{
+		grid-template-areas:
+			"navTitle navTitle navTitle"
+			"apiOwnersLink roboticsLink sharePointLink"
+	}
+	
+	div.navExperienceSharePoint{
+		grid-template-areas:
+			"navTitle navTitle navTitle"
+			"apiOwnersLink roboticsLink scorecardLink"
+	}
+	
+	div.navExperienceAPIOwnership {
+		grid-template-areas:
+			"navTitle navTitle navTitle"
+			"roboticsLink sharePointLink3 scorecardLink"
+	}
+
 	
 }
 
