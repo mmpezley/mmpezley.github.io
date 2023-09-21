@@ -391,7 +391,7 @@ p.experienceText {
 	margin-top: 0;
 }
 
-img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge {
+img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge, img.expereincePhotoMedium2 {
 	display: block;
 	float: center;
 	margin: 1em auto;
@@ -409,6 +409,10 @@ img.expereincePhotoSmall {
 }
 img.expereincePhotoMedium {
 	width: 65%;
+}
+
+img.expereincePhotoMedium2 {
+	width: 73%;
 }
 
 div.persona2, div.photo22{
@@ -455,27 +459,29 @@ div.photoColumns2{
 		"photo22"
 }
 
-div.navTitle					{ grid-area: navTitle; }
-div.apiOwnersLink				{ grid-area: apiOwnersLink; }
-div.roboticsLink				{ grid-area: roboticsLink; }
-div.sharePointLink				{ grid-area: sharePointLink; }
-div.sharePointLink2				{ grid-area: sharePointLink2; }
-div.sharePointLink3 			{ grid-area: sharePointLink3; }
-div.scorecardLink				{ grid-area: scorecardLink; }
-div.otherWork					{ grid-area: otherWork; }
+div.navTitle			{ grid-area: navTitle; }
+div.apiOwnersLink		{ grid-area: apiOwnersLink; }
+div.roboticsLink		{ grid-area: roboticsLink; }
+div.sharePointLink		{ grid-area: sharePointLink; }
+div.sharePointLink2		{ grid-area: sharePointLink2; }
+div.sharePointLink3 	{ grid-area: sharePointLink3; }
+div.scorecardLink		{ grid-area: scorecardLink; }
+div.otherWork			{ grid-area: otherWork; }
 
-div.socialMediaSOFIRST			{ grid-area: socialMediaSOFIRST; }
-div.PR							{ grid-area: PR; }
-div.htmlCss						{ grid-area: htmlCss; }
-div.corpCommunication			{ grid-area: corpCommunication; }
+div.dawnFoods			{ grid-area: dawnFoods; }
+div.PR					{ grid-area: PR; }
+div.htmlCss				{ grid-area: htmlCss; }
+div.corpCommunication	{ grid-area: corpCommunication; }
 
 div.otherExperienceExamples{
 		display: grid;
 		align-items: top;
-		grid-template-columns: 33% 33% 33%;
+		grid-template-columns: auto;
 		grid-template-areas:
-			"htmlCss htmlCss socialMediaSOFIRST"
-			"PR corpCommunication corpCommunication"
+			"htmlCss"
+			"dawnFoods"
+			"corpCommunication"
+			"PR"
 	}
 
 video{
@@ -661,7 +667,7 @@ video{
 		align-items: top;
 		grid-template-columns: 33% 33% 34%;
 		grid-template-areas:
-			"htmlCss htmlCss socialMediaSOFIRST"
+			"htmlCss htmlCss dawnFoods"
 			"PR corpCommunication corpCommunication"
 	}
 	
