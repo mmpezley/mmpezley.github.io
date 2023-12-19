@@ -391,7 +391,7 @@ p.experienceText {
 	margin-top: 0;
 }
 
-img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge, img.expereincePhotoMedium2 {
+img.expereincePhoto, img.expereincePhotoSmall, img.expereincePhotoMedium, img.expereincePhotoLarge, img.expereincePhotoMedium2, img.expereincePhotoMedium3 {
 	display: block;
 	float: center;
 	margin: 1em auto;
@@ -415,11 +415,15 @@ img.expereincePhotoMedium2 {
 	width: 73%;
 }
 
+img.expereincePhotoMedium3 {
+	width: 69%;
+}
+
 div.persona2, div.photo22{
 	display: none;
 }
 
-div.photoColumns, div.personaImages, div.photoColumns2, div.experiences{
+div.photoColumns, div.personaImages, div.photoColumns2, div.experiences, div.lowFidelityImages{
 	display: grid;
 	align-items: top;
 	grid-template-columns: auto;
@@ -445,6 +449,13 @@ h2.roboticsClubTitle {
 div.personaImages{
 	grid-template-areas:
 		"persona1"
+}
+
+div.lowFidelityImages{
+	grid-template-areas:
+		"lowImage1"
+		"lowImage2"
+	
 }
 
 div.photoColumns{
@@ -523,7 +534,13 @@ video{
 	div.persona2{
 		display: block;
 	}
-
+	div.lowFidelityImages{
+		display: grid;
+		align-items: top;
+		grid-template-columns: 45% 55%;
+		grid-template-areas:
+			"lowImage1 lowImage2"
+	}
 }	
 	
 @media screen and (min-width: 800px){
