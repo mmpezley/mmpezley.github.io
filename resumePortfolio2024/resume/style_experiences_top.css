@@ -1,0 +1,349 @@
+@font-face{
+	font-family: "LTFunk";
+	src: url("LTFunk.otf") format('opentype');
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "DMSansRegular";
+	src: url("DMSans-Regular.ttf") format('truetype');
+}
+
+@font-face{
+	font-family: "DMSansSemiBold";
+	src: url("DMSans-SemiBold.ttf") format('truetype');
+}
+
+h2.experienceExampleTitle {
+	margin-bottom: 0;
+	font-size: 30pt;
+	text-align: center;
+	padding-top: 0.5in;
+	padding-bottom: 0.1in;
+}
+
+img.experiencePhoto {
+	width: 50%;
+}
+
+div.experienceTitleSection, div.experienceExamples, div.experienceTopParagraph, div.experienceOtherExamples {
+	background-color: #FDF3DD;
+}
+
+div.experienceTitleSection, div.experienceExamples, div.experienceTopParagraph, div.experienceOtherExamples {
+	padding-left: 0.5in;
+	padding-right: 0.5in;
+}
+
+h3.experienceExampleHeading {
+	font-size: 25pt;
+	margin-bottom: 0;
+	color: #B84C65;
+}
+
+p.experienceTopParagraph, p.experienceOtherParagraph {
+	font-size: 14pt;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0.4in;
+}
+
+div.experienceExampleImageBackgrounds {
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+div.experienceExampleTitle {
+	padding-left: 10%;
+}
+
+p.experienceExampleButton {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.1in;
+	margin-bottom: 0.7in;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding: 0.1in !important;
+}
+
+div.exampleExperiencesColumns {
+	display: grid;
+	align-items: normal;
+	grid-template-columns: 30% 70%;
+}
+
+div.apiExampleImageBackground {
+	background-color: #663635;
+}
+
+div.apiExampleImage { grid-area: apiExampleImage; }
+div.apiExampleTitle	{ grid-area: apiExampleTitle; }
+div.apiExampleText 	{ grid-area: apiExampleText; }
+div.apiExampleButton { grid-area: apiExampleButton; }
+
+div.apiExample {
+	grid-area: apiExample;
+	grid-template-areas: 
+		"apiExampleImage apiExampleTitle"
+		"apiExampleText apiExampleText"
+		"apiExampleButton apiExampleButton"
+}
+
+div.roboticsExampleImage {
+	grid-area: roboticsExampleImage;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+div.roboticsExampleImageBackgrounds {
+	background-color: #DEB3AD;
+}
+div.roboticsExampleTitle { grid-area: roboticsExampleTitle; }
+div.roboticsExampleText { grid-area: roboticsExampleText; }
+div.roboticsExampleButton { grid-area: roboticsExampleButton; }
+
+div.roboticsExample {
+	grid-area: roboticsExample; 
+	grid-template-areas: 
+		"roboticsExampleImage roboticsExampleTitle"
+		"roboticsExampleText roboticsExampleText"
+		"roboticsExampleButton roboticsExampleButton"
+}
+
+div.aftermarketExampleImage {
+	grid-area: aftermarketExampleImage;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+div.aftermarketExampleImageBackgrounds {
+	background-color: #F6C9C3;
+}
+div.aftermarketExampleTitle { grid-area: aftermarketExampleTitle; }
+div.aftermarketExampleText { grid-area: aftermarketExampleText; }
+div.aftermarketExampleButton { grid-area: aftermarketExampleButton; }
+
+div.aftermarketExample {
+	grid-area: aftermarketExample; 
+	grid-template-areas: 
+		"aftermarketExampleImage aftermarketExampleTitle"
+		"aftermarketExampleText aftermarketExampleText"
+		"aftermarketExampleButton aftermarketExampleButton"
+}
+
+div.cpsExampleImage {
+	grid-area: cpsExampleImage;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+
+}
+div.cpsExampleImageBackgrounds {
+	background-color: #C97A80;
+}
+div.cpsExampleTitle 	{ grid-area: cpsExampleTitle; }
+div.cpsExampleText		{ grid-area: cpsExampleText; }
+div.cpsExampleButton	{ grid-area: cpsExampleButton; }
+
+div.cpsExample {
+	grid-area: cpsExample;
+	grid-template-areas: 
+		"cpsExampleImage cpsExampleTitle"
+		"cpsExampleText cpsExampleText"
+		"cpsExampleButton cpsExampleButton"
+}
+
+div.textToImageExampleImage {
+	grid-area: textToImageExampleImage;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+
+}
+div.texToImageExampleImageBackgrounds {
+	background-color: #E791A8;
+}
+div.textToImageExampleTitle 	{ grid-area: textToImageExampleTitle; }
+div.textToImageExampleText		{ grid-area: textToImageExampleText; }
+div.textToImageExampleButton	{ grid-area: textToImageExampleButton; }
+
+div.textToImageExample {
+	grid-area: textToImageExample;
+	grid-template-areas: 
+		"textToImageExampleImage textToImageExampleTitle"
+		"textToImageExampleText textToImageExampleText"
+		"textToImageExampleButton textToImageExampleButton"
+}
+
+div.aiExampleImage {
+	grid-area: aiExampleImage;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+
+}
+div.aiExampleImageBackgrounds {
+	background-color: #785C60;
+}
+div.aiExampleTitle 	{ grid-area: aiExampleTitle; }
+div.aiExampleText	{ grid-area: aiExampleText; }
+div.aiExampleButton	{ grid-area: aiExampleButton; }
+
+div.aiExample {
+	grid-area: aiExample;
+	grid-template-areas: 
+		"aiExampleImage aiExampleTitle"
+		"aiExampleText aiExampleText"
+		"aiExampleButton aiExampleButton"
+}
+
+div.distekExampleImage { grid-area: distekExampleImage; }
+div.dawnExampleImage { grid-area: dawnExampleImage; }
+div.PRImage { grid-area: PRImage; }
+div.communicationImage { grid-area: communicationImage;}
+
+img.distekExampleImage { 
+	width: 70%;
+	padding-bottom: 0.3in;
+}
+img.dawnExampleImage {
+	width: 50%;
+	padding-bottom: 0.3in;
+}
+
+img.PRImage {
+	width: 40%;
+	padding-bottom: 0.3in;
+}
+img.communicationImage{
+	width: 70%;
+	padding-bottom: 0.3in;
+}
+
+div.experienceOtherExamples {
+	padding-bottom: 0.5in;
+}
+
+h2.otherExperienceExampleTitle {
+	margin-bottom: 0;
+	font-size: 30pt;
+	text-align: center;
+	padding-top: 0.2in;
+	padding-bottom: 0.1in;
+	color: #B84C65;
+	border-top-style: solid;
+	border-top-width: 0.03in;
+	border-top-color: black;
+}
+
+a.emailInParagraph {
+	color: #962547;
+}
+
+div.experienceOtherExampleImages {
+	grid-area: experienceOtherExampleImages;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"distekExampleImage"
+		"dawnExampleImage"
+		"PRImage"
+		"communicationImage"
+}
+
+/**HOVER**/
+p.experienceExampleButton:hover {
+	background-color: #962547;
+	color: #FDF3DD;
+	font-family: DMSansExtraBold;
+}
+
+
+/**RESPONSIVE DESIGN**/
+@media screen and (min-width: 700px) {
+	div.experienceExampleTitle, div.experienceExampleText, div.experienceExampleButton {
+		padding-left: 10%;
+	}
+	
+	div.exampleExperiencesColumns {
+		display: grid;
+		align-items: normal;
+		grid-template-columns: 30% 70%;
+	}
+	
+	div.apiExample {
+		grid-template-areas: 
+			"apiExampleImage apiExampleTitle"
+			"apiExampleImage apiExampleText"
+			"apiExampleImage apiExampleButton"
+	}
+
+	div.roboticsExample {
+		grid-template-areas: 
+			"roboticsExampleImage roboticsExampleTitle"
+			"roboticsExampleImage roboticsExampleText"
+			"roboticsExampleImage roboticsExampleButton"
+	}
+
+	div.aftermarketExample {
+		grid-template-areas: 
+			"aftermarketExampleImage aftermarketExampleTitle"
+			"aftermarketExampleImage aftermarketExampleText"
+			"aftermarketExampleImage aftermarketExampleButton"
+	}
+
+	div.cpsExample {
+		grid-template-areas: 
+			"cpsExampleImage cpsExampleTitle"
+			"cpsExampleImage cpsExampleText"
+			"cpsExampleImage cpsExampleButton"
+	}
+	
+	div.textToImageExample {
+		grid-template-areas: 
+			"textToImageExampleImage textToImageExampleTitle"
+			"textToImageExampleImage textToImageExampleText"
+			"textToImageExampleImage textToImageExampleButton"
+	}
+	
+	div.aiExample {
+		grid-template-areas: 
+			"aiExampleImage aiExampleTitle"
+			"aiExampleImage aiExampleText"
+			"aiExampleImage aiExampleButton"
+	}
+}
+
+@media screen and (min-width: 800px){
+	div.experienceTitleSection, div.experienceExamples, div.experienceTopParagraph, div.experienceOtherExamples {
+		padding-left: 1.2in;
+		padding-right: 1.2in;
+	}
+	
+	div.experienceOtherExampleImages {
+		grid-area: experienceOtherExampleImages;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+		grid-template-areas: 
+			"distekExampleImage distekExampleImage distekExampleImage distekExampleImage distekExampleImage distekExampleImage distekExampleImage dawnExampleImage dawnExampleImage dawnExampleImage"
+			"PRImage PRImage PRImage PRImage PRImage communicationImage communicationImage communicationImage communicationImage communicationImage"
+	}
+	
+	img.distekExampleImage { 
+		width: 85%;
+		padding-bottom: 0.3in;
+	}
+	img.dawnExampleImage {
+		width: 80%;
+		padding-bottom: 0.3in;
+	}
+
+	img.PRImage {
+		width: 48%;
+		padding-bottom: 0.3in;
+	}
+	img.communicationImage{
+		width: 80%;
+		padding-bottom: 0.3in;
+	}
+}

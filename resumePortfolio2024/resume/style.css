@@ -1,0 +1,778 @@
+@font-face{
+	font-family: "Honeypirls";
+	src: url("LTFunk.otf") format('opentype');
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "DMSansRegular";
+	src: url("DMSans-Regular.ttf") format('truetype');
+}
+
+@font-face{
+	font-family: "DMSansSemiBold";
+	src: url("DMSans-SemiBold.ttf") format('truetype');
+}
+
+@font-face{
+	font-family: "DMSansExtraBold";
+	src: url("DMSans-ExtraBold.ttf") format('truetype');
+}
+
+
+
+body{
+	margin:0;
+}
+
+h1, h2, h3{
+	font-family: Honeypirls;
+	margin-top:0;
+	letter-spacing: 1px;
+}
+
+h1{
+	font-size: 30pt;
+	padding-bottom: 0.1in;
+	margin-bottom: 0;
+}
+
+h2{
+	font-size:40pt;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+	font-family: DMSansRegular;
+}
+
+p{
+	font-family: DMSansRegular;
+}
+
+video {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+video.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.right {
+	position: absolute; 
+	top: 8%;
+	right: 3%;
+}
+
+span.bold, p.bold {
+	font-family: DMSansSemiBold;
+}
+
+p.italic {
+	font-style: italic;
+}
+
+header, div.homeTop, footer{
+	background-color: #F6C9C3;
+}
+
+p.navigation, a.navigation, p.currentPage {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 14pt;
+}
+
+p.currentPage {
+	color: #962547;
+	text-align: center;
+}
+
+#homeTitle{
+	font-size: 30pt;
+	padding-top: 0.3in;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+div.headerName { 
+	grid-area: headerName; 
+	text-align: center;
+}
+
+div.headerNavigateResume		{ grid-area: headerNavigateResume; }
+div.headerNavigateExperience 	{ grid-area: headerNavigateExperience; }
+div.headerNavigateHome			{ grid-area: headerNavigateHome; }
+div.headerEmail					{ grid-area: headerEmail; }
+div.headerPhone					{ grid-area: headerPhone; }
+div.headerLinkedIn				{ grid-area: headerLinkedIn; }
+
+header {
+	padding-top: 0.1in;
+	padding-left: 0.15in;
+	padding-right: 0.15in;
+	padding-bottom: 0.1in;
+	border-bottom: 0.03in;
+	border-bottom-color: black;
+	border-bottom-style: solid;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-areas: 
+		"headerName headerName headerName"
+		"headerNavigateHome headerNavigateResume headerNavigateExperience"
+		"headerEmail headerPhone headerLinkedIn"
+}
+
+div.homeTop1 	{ grid-area: homeTop1; }
+div.homeTop2a 	{ grid-area: homeTop2a; }
+div.homeTop2b	{ grid-area: homeTop2b; }
+
+div.homeTop2a, div.homeTop2b {
+	margin-left: 5%;
+	margin-right: 10%;	
+}
+
+div.homeTop2b {
+	padding-bottom: 0.2in;
+}
+
+div.homeTop{
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+	grid-template-areas:
+		"homeTop2a"
+		"homeTop1"
+		"homeTop2b"
+}
+
+img.roundHeadshot{
+	width:50%;
+	border-top-left-radius:250px;
+	border-top-right-radius:250px;
+	max-width: 5in;
+	margin-top: 0.25in;
+	margin-bottom: 0in;
+}
+
+img.navigationPhotos {
+	width: 25%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0.1in;
+	padding-bottom: 0.1in;
+}
+
+p.navigation {
+	text-align: center;
+	padding-top: 0.1in;
+	padding-bottom: 0.1in;
+}
+
+p.home {
+	font-size: 12pt;
+}
+
+a.aboutMeButton {
+	text-align: center;
+	max-width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5in;
+}
+
+p.aboutMeButton {
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding: 0.1in !important;
+}
+
+img.experiencePhoto{
+	width: 50%;
+	padding: 0.2in;
+}
+
+p.experienceText {
+	text-align: center;
+	font-size: 18pt;
+	font-family: DMSansSemiBold;
+}
+
+img.more {
+	width: 4%;
+}
+
+div.apiOwnershipImageCol	{ grid-area: apiOwnershipImageCol; }
+div.apiOwnershipTitleCol	{ grid-area: apiOwnershipTitleCol; }
+div.apiOwnershipMoreCol		{ grid-area: apiOwnershipMoreCol; }
+
+a.apiOwnership {
+	background-color: #663635;
+	color: #FDF3DD;
+	width: 75%;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 0.1in;
+	display: grid;
+	align-content: center;
+	position: relative;
+}
+
+div.apiOwnership {
+	grid-area: apiOwnership; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"apiOwnershipImageCol apiOwnershipTitleCol apiOwnershipMoreCol"
+}
+
+div.aftermarketImageCol	{ grid-area: aftermarketImageCol; }
+div.aftermarketTitleCol	{ grid-area: aftermarketTitleCol; }
+div.aftermarketMoreCol	{ grid-area: aftermarketMoreCol; }
+div.aftermarketMoreColHover { 
+	grid-area: aftermarketMoreColHover; 
+	display: none;
+}
+
+a.aftermarket {
+	background-color: #F6C9C3;
+	color: #000000;
+	width: 75%;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 0.1in;
+	display: grid;
+	align-content: center;
+	position: relative;
+}
+
+div.aftermarket {
+	grid-area: aftermarket; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"aftermarketImageCol aftermarketTitleCol aftermarketMoreCol"
+}
+
+div.roboticsImageCol	{ grid-area: roboticsImageCol; }
+div.roboticsTitleCol	{ grid-area: roboticsTitleCol; }
+div.roboticsMoreCol		{ grid-area: roboticsMoreCol; }
+div.roboticsMoreColHover { 
+	grid-area: roboticsMoreColHover; 
+	display: none;
+}
+
+a.robotics {
+	position: relative;	
+	background-color: #DEB3AD;
+	color: #000000;
+	width: 75%;
+	display: grid;
+	align-content: center;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;		
+	border-radius: 0.1in;
+	display: grid;
+}
+
+div.robotics {
+	grid-area: robotics;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"roboticsImageCol roboticsTitleCol roboticsMoreCol"
+}
+
+div.cpsTraceImageCol	{ grid-area: cpsTraceImageCol; }
+div.cpsTraceTitleCol	{ grid-area: cpsTraceTitleCol; }
+div.cpsTraceMoreCol		{ grid-area: cpsTraceMoreCol; }
+div.cpsTraceMoreColHover { 
+	grid-area: cpsTraceMoreColHover; 
+	display: none;
+}
+
+a.cpsTrace {
+	position: relative;
+	background-color: #C97A80;
+	color: #000000;
+	width: 75%;
+	display: grid;
+	align-items: center;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 0.1in;
+	display: grid;
+}
+
+div.cpsTrace {
+	grid-area: cpsTrace; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"cpsTraceImageCol cpsTraceTitleCol cpsTraceMoreCol"
+}
+
+div.homeWorkExperiencesTitle {
+	grid-area: homeWorkExperiencesTitle;
+	
+}
+
+h3.experienceTitle {
+	font-size: 30pt;
+	padding-top: 0.5in;
+	margin-bottom: 0;
+	letter-spacing: 15px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+h3.experienceTitle:before,
+h3.experienceTitle:after {
+	content: '';
+	border-top: 2px solid;
+	flex: 1 0 20px;
+	color: #000000;
+}
+h3.experienceTitle:before {
+	margin: 0 20px 0 3%;
+}
+
+h3.experienceTitle:after {
+	margin: 0 3% 0 5px;
+}
+
+div.homeExperiences{
+	background-color: #FDF3DD;
+	padding-bottom: 0.5in;
+}
+div.workExperiences{	
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"homeWorkExperiencesTitle"
+		"apiOwnership"
+		"aftermarket"
+		"robotics"
+		"cpsTrace"
+}
+
+div.homeResearchExperiencesTitle { grid-area: homeResearchExperiencesTitle; }
+
+div.textToImageImageCol		{ grid-area: textToImageImageCol; }
+div.textToImageTitleCol		{ grid-area: textToImageTitleCol; }
+div.textToImageMoreCol		{ grid-area: textToImageMoreCol; }
+div.textToImageMoreColHover { 
+	grid-area: textToImageMoreColHover; 
+	display: none;
+}
+
+a.textToImage {
+	position: relative;
+	background-color: #E791A8;
+	color: #000000;
+	width: 75%;
+	display: grid;
+	align-items: center;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 0.1in;
+	display: grid;
+}
+
+div.textToImage {
+	grid-area: textToImage; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"textToImageImageCol textToImageTitleCol textToImageMoreCol"
+}
+
+div.aiGeneratedImageCol		{ grid-area: aiGeneratedImageCol; }
+div.aiGeneratedTitleCol		{ grid-area: aiGeneratedTitleCol; }
+div.aiGeneratedMoreCol		{ grid-area: aiGeneratedMoreCol; }
+
+a.aiGenerated {
+	position: relative;
+	background-color: #785C60;
+	color: #FDF3DD;
+	width: 75%;
+	display: grid;
+	align-items: center;
+	margin: 0.1in;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 0.1in;
+	display: grid;
+}
+
+div.aiGenerated {
+	grid-area: aiGenerated; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 30% 65% 5%;
+	grid-template-areas: 
+		"aiGeneratedImageCol aiGeneratedTitleCol aiGeneratedMoreCol"
+}
+
+div.researchExperiences{	
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"homeResearchExperiencesTitle"
+		"textToImage"
+		"aiGenerated"
+}
+
+div.homeResume{
+	background-color: #663635;
+}
+
+a.homeResumeButton {
+	text-align: center;
+	max-width: 94%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0.4in;
+	padding-bottom: 0.4in;
+	border-radius: 0.1in;
+}
+h2.homeResumeButton {
+	border-style: solid;
+	border-width: 2px;
+	background-color: #FDF3DD;
+	color: #663635;
+	padding: 0.1in !important;
+	margin-bottom: 0;
+	letter-spacing: 12px;
+	border-radius: 0.1in;
+	font-size: 25pt;
+	padding-left: 0.4in;
+	padding-right: 0.4in;
+}
+
+div.nameFooter {
+	grid-area: nameFooter; 
+	padding-top: 0.3in;
+}
+
+div.contact {
+	grid-area: contact;
+	align-items: center;
+	display: grid;
+	padding-left: 0.4in;
+	padding-bottom: 0.3in;
+}
+
+footer {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"nameFooter"
+		"contact"
+}
+
+h1.nameFooter {
+	font-size: 45pt;
+	line-height: 45pt;
+	margin-left: 5%;
+	margin-right: 12%;
+	border-bottom-width: 0.1in;
+	border-bottom-color: black;
+	border-bottom-style: solid;
+}
+
+/**HOVER EFFECTS**/
+h2.homeResumeButton:hover {
+	background-color: #DEB3AD;
+}
+
+a.textToImage:hover, a.aiGenerated:hover, a.cpsTrace:hover, a.robotics:hover, a.aftermarket:hover, a.apiOwnership:hover, a.aboutMeButton:hover {
+	background-color: #962547;
+	color: #FDF3DD;
+}
+
+a.divLink {
+	position: absolute;
+}
+
+a.aboutMeButton:hover, p.aboutMeButton:hover {
+	font-family: DMSansExtraBold;
+}
+
+p.navigation:hover, a.navigation:hover,  a.footer:hover{
+	color: #962547;
+	font-family: DMSansExtraBold;
+}
+
+h1.navigationName:hover, a.navigationName:hover {
+	color: #962547;
+}
+
+a.emailInParagraph:hover {
+	color: black;
+}
+
+div.aftermarketImageColHover, div.roboticsImageColHover,  div.cpsTraceImageColHover, div.textToImageImageColHover{
+	display: none;
+}
+
+img.emailPink, img.phonePink, img.linkedinPink {
+	display: none;
+}
+
+
+
+/**RESPONSIVE DESIGN**/
+@media screen and (min-width: 550px) {
+	header {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 20% 20% 20%;
+		grid-template-areas: 
+			"headerName headerNavigateHome headerNavigateResume headerNavigateExperience"
+			"headerName headerEmail headerPhone headerLinkedIn"
+	}
+	
+	div.headerName { 
+		text-align: left;
+		padding-right: 30%;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	div.homeTop{
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 60%;
+		grid-template-areas:
+			"homeTop2a homeTop2a"
+			"homeTop1 homeTop2b"
+	}
+	
+	img.roundHeadshot{
+		width:75%;
+		border-top-left-radius:250px;
+		border-top-right-radius:250px;
+		max-width: 5in;
+		margin-top: 0.25in;
+		margin-bottom: 0in;
+	}
+}
+
+
+@media screen and (min-width: 700px) {
+	footer {
+		grid-template-columns: 3.5in auto;
+		grid-template-areas: 
+			"nameFooter contact"
+	}
+	
+	h1.nameFooter {
+		font-size: 45pt;
+		line-height: 45pt;
+		padding-left: 10%;
+		padding-right: 12%;
+		border-right-width: 0.1in;
+		border-right-color: black;
+		border-right-style: solid;
+		border-bottom-style: none;
+	}
+	
+	div.nameFooter {
+		padding-top: 0.3in;
+		padding-bottom: 0.3in;
+	}
+	
+	div.contact {
+		padding-bottom: 0;
+	}
+	
+	h2.homeResumeButton {
+		font-size: 30pt;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	header {
+		padding-top: 0.1in;
+		padding-left: 0.15in;
+		padding-right: 0.15in;
+		padding-bottom: 0.1in;
+		border-bottom: 0.03in;
+		border-bottom-color: black;
+		border-bottom-style: solid;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 14% 14% 14% 6% 6% 6%;
+		grid-template-areas: 
+			"headerName headerNavigateHome headerNavigateResume headerNavigateExperience headerEmail headerPhone headerLinkedIn"
+	}
+	
+	div.headerName { 
+		padding-right: 10%;
+	}
+	
+	img.navigationPhotos {
+		width: 50%;
+	}
+	
+	div.homeTop{
+		grid-template-columns: 45% 55%;
+		grid-template-areas:
+			"homeTop1 homeTop2a"
+			"homeTop1 homeTop2b"
+	}
+	
+	#homeTitle{
+		font-size: 30pt;
+		padding-top: 0.3in;
+		margin-bottom: 0;
+		text-align: left;
+	}
+	
+	p.home {
+		font-size: 12pt;
+	}
+	
+	div.workExperiences{	
+		display: grid;
+		align-items: top;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"homeWorkExperiencesTitle homeWorkExperiencesTitle"
+			"apiOwnership aftermarket"
+			"robotics cpsTrace"
+	}
+	
+	a.apiOwnership, a.robotics, a.textToImage {
+		width: auto;
+		margin: 0.1in;
+		margin-left: 6%;
+		display: grid;
+		align-content: center;
+		position: relative;
+
+	}
+	
+	a.aftermarket, a.cpsTrace, a.aiGenerated {
+		width: auto;
+		margin: 0.1in;
+		margin-right: 6%;
+		display: grid;
+		align-content: center;
+		position: relative;
+	}
+	
+	div.apiOwnership {
+		position: relative;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"apiOwnershipImageCol apiOwnershipTitleCol apiOwnershipMoreCol"
+	}
+
+
+	div.aftermarket {
+		position: relative;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"aftermarketImageCol aftermarketTitleCol aftermarketMoreCol"
+	}
+
+	div.robotics {
+		position: relative;	
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"roboticsImageCol roboticsTitleCol roboticsMoreCol"
+	}
+
+	div.cpsTrace {
+		position: relative;
+		width: 100%;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"cpsTraceImageCol cpsTraceTitleCol cpsTraceMoreCol"
+	}
+
+	div.textToImage {
+		position: relative;
+		width: 100%;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"textToImageImageCol textToImageTitleCol textToImageMoreCol"
+	}
+
+	div.aiGenerated {
+		position: relative;
+		width: 100%;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 40% 50% 5%;
+		grid-template-areas: 
+			"aiGeneratedImageCol aiGeneratedTitleCol aiGeneratedMoreCol"
+	}
+
+	div.researchExperiences{	
+		display: grid;
+		align-items: top;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"homeResearchExperiencesTitle homeResearchExperiencesTitle"
+			"textToImage aiGenerated"
+	}
+	
+	h2.homeResumeButton {
+		font-size: 40pt;
+	}
+
+}
+
+@media screen and (min-width: 1000px){
+	#homeTitle{
+		font-size: 40pt;
+	}
+	
+	p.home {
+		font-size: 14pt;
+	}
+}

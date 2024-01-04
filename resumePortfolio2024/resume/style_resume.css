@@ -1,0 +1,438 @@
+@font-face{
+	font-family: "LTFunk";
+	src: url("LTFunk.otf") format('truetype');
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "DMSansRegular";
+	src: url("DMSans-Regular.ttf") format('truetype');
+}
+
+@font-face{
+	font-family: "DMSansSemiBold";
+	src: url("DMSans-SemiBold.ttf") format('truetype');
+}
+
+ul, li{
+	font-family: DMSansRegular;
+}
+
+ul {
+	padding-bottom: 0.4in;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h2.resumeTitle {
+	margin-bottom: 0;
+	font-size: 30pt;
+	text-align: center;
+	padding-top: 0.5in;
+	padding-bottom: 0.1in;
+}
+
+div.resumeTitle, div.resumeWorkExperiences, div.resumeEducation, div.resumeSkills{
+	background-color: #FDF3DD;
+	padding-left: 0.5in;
+	padding-right: 0.5in;
+}
+
+div.resumeEducation, div.resumeWorkExperiences, div.resumeSkills {
+	padding-bottom: 0.25in;
+}
+
+h4.companyTitles {
+	font-size: 18pt;
+	font-family: LTFunk;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+h5.positionTitles {
+	font-family: LTFunk;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	margin-top: 0;
+	color: #B84C65;
+}
+
+p.workLocation {
+	font-size: 14pt;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.workExperienceSubtitle {
+	font-size: 12pt;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.workDate {
+	margin-top: 0;
+}
+
+div.workExperienceDate {
+	padding-right: 0.5in;
+}
+
+div.workExperienceTitles {
+	padding-right: 0.5in;
+	font-size: 20pt;
+}
+
+h3.workTitle {
+	font-size: 30pt;
+	color: #B84C65;
+	margin-bottom: 0;
+}
+
+div.resumeColumns {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+}
+
+div.mastersDate		{ grid-area: mastersDate; }
+div.mastersTitle 	{ grid-area: mastersTitle; }
+div.mastersContent 	{ grid-area: mastersContent; }
+
+div.resumeMaster {
+	grid-area: resumeMaster; 
+	grid-template-areas: 
+		"mastersTitle"
+		"mastersDate"
+		"mastersContent"
+}
+
+div.bachelorsDate		{ grid-area: bachelorsDate; }
+div.bachelorsTitle 		{ grid-area: bachelorsTitle; }
+div.bachelorsContent 	{ grid-area: bachelorsContent; }
+div.SOFIRST				{ grid-area: SOFIRST; }
+
+div.resumeBachelors {
+	grid-area: resumeBachelors; 
+	grid-template-areas: 
+		"bachelorsTitle"
+		"bachelorsDate"
+		"bachelorsContent"
+		"SOFIRST"
+}
+
+div.JD5Date		{ grid-area: JD5Date; }
+div.JD5Title 	{ grid-area: JD5Title; }
+div.JD5Content 	{ grid-area: JD5Content; }
+
+div.JD5 {
+	grid-area: JD5; 
+	grid-template-areas: 
+		"JD5Title"
+		"JD5Date"
+		"JD5Content"
+}
+
+div.JD4Date		{ grid-area: JD4Date; }
+div.JD4Title 	{ grid-area: JD4Title; }
+div.JD4Content 	{ grid-area: JD4Content; }
+
+div.JD4 {
+	grid-area: JD4; 
+	grid-template-areas: 
+		"JD4Title"
+		"JD4Date"
+		"JD4Content"
+}
+
+div.JD3Date		{ grid-area: JD3Date; }
+div.JD3Title 	{ grid-area: JD3Title; }
+div.JD3Content 	{ grid-area: JD3Content; }
+
+div.JD3 {
+	grid-area: JD3; 
+	grid-template-areas: 
+		"JD3Title"
+		"JD3Date"
+		"JD3Content"
+}
+
+div.JD2Date		{ grid-area: JD2Date; }
+div.JD2Title 	{ grid-area: JD2Title; }
+div.JD2Content 	{ grid-area: JD2Content; }
+
+div.JD2 {
+	grid-area: JD2; 
+	grid-template-areas: 
+		"JD2Title"
+		"JD2Date"
+		"JD2Content"
+}
+
+div.JD1Date		{ grid-area: JD1Date; }
+div.JD1Title 	{ grid-area: JD1Title; }
+div.JD1Content 	{ grid-area: JD1Content; }
+
+div.JD1 {
+	grid-area: JD1; 
+	grid-template-areas: 
+		"JD1Title"
+		"JD1Date"
+		"JD1Content"
+}
+
+div.ISU212Date		{ grid-area: ISU212Date; }
+div.ISU212Title 	{ grid-area: ISU212Title; }
+div.ISU212Content 	{ grid-area: ISU212Content; }
+
+div.ISU212 {
+	grid-area: ISU212; 
+	grid-template-areas: 
+		"ISU212Title"
+		"ISU212Date"
+		"ISU212Content"
+}
+
+div.ISURADate		{ grid-area: ISURADate; }
+div.ISURATitle		{ grid-area: ISURATitle; }
+div.ISURAContent 	{ grid-area: ISURAContent; }
+
+div.ISURA {
+	grid-area: ISURA; 
+	grid-template-areas: 
+		"ISURATitle"
+		"ISURADate"
+		"ISURAContent"
+}
+
+div.ISUTADate		{ grid-area: ISUTADate; }
+div.ISUTATitle		{ grid-area: ISUTATitle; }
+div.ISUTAContent 	{ grid-area: ISUTAContent; }
+
+div.ISUTA {
+	grid-area: ISUTA; 
+	grid-template-areas: 
+		"ISUTATitle"
+		"ISUTADate"
+		"ISUTAContent"
+}
+
+div.ISUWiseDate		{ grid-area: ISUWiseDate; }
+div.ISUWiseTitle	{ grid-area: ISUWiseTitle; }
+div.ISUWiseContent 	{ grid-area: ISUWiseContent; }
+
+div.ISUWise {
+	grid-area: ISUWise; 
+	grid-template-areas: 
+		"ISUWiseTitle"
+		"ISUWiseDate"
+		"ISUWiseContent"
+}
+
+div.DFLDDate	{ grid-area: DFLDDate; }
+div.DFLDTitle	{ grid-area: DFLDTitle; }
+div.DFLDContent { grid-area: DFLDContent; }
+
+div.DFLD {
+	grid-area: DFLD; 
+	grid-template-areas: 
+		"DFLDTitle"
+		"DFLDDate"
+		"DFLDContent"
+}
+
+div.resumeSkillsTitle, div.resumeWorkTitle {
+	border-top-style: solid;
+	border-top-color: black;
+	border-top-width: 0.03in;
+	padding-top: 0.5in;
+}
+
+div.SkillsBullets2Col {
+	display: none;
+	align-items: top;
+	grid-template-columns: 50% 50%;
+}
+
+div.SkillsBullets3Col {
+	display: none;
+	align-items: top;
+	grid-template-columns: 33% 33% 33%;
+}
+
+div.UXSkillsBullets2a { grid-area: UXSkillsBullets2a; }
+div.UXSkillsBullets2b { grid-area: UXSkillsBullets2b; }
+div.UXSkillsBullets3a { grid-area: UXSkillsBullets3a; }
+div.UXSkillsBullets3b { grid-area: UXSkillsBullets3b; }
+div.UXSkillsBullets3c { grid-area: UXSkillsBullets3c; }
+
+div.UXSkillsBullets2Col {
+	grid-template-areas: 
+		"UXSkillsBullets2a UXSkillsBullets2b"
+}
+
+div.UXSkillsBullets3Col {
+	grid-template-areas: 
+		"UXSkillsBullets3a UXSkillsBullets3b UXSkillsBullets3c"
+}
+
+div.SoftwareSkillsBullets2a { grid-area: SoftwareSkillsBullets2a; }
+div.SoftwareSkillsBullets2b { grid-area: SoftwareSkillsBullets2b; }
+div.SoftwareSkillsBullets3a { grid-area: SoftwareSkillsBullets3a; }
+div.SoftwareSkillsBullets3b { grid-area: SoftwareSkillsBullets3b; }
+div.SoftwareSkillsBullets3c { grid-area: SoftwareSkillsBullets3c; }
+
+div.SoftwareSkillsBullets2Col {
+	grid-template-areas: 
+		"SoftwareSkillsBullets2a SoftwareSkillsBullets2b"
+}
+
+div.SoftwareSkillsBullets3Col {
+	grid-template-areas: 
+		"SoftwareSkillsBullets3a SoftwareSkillsBullets3b SoftwareSkillsBullets3c"
+}
+
+div.LanguagesSkillsBullets2a { grid-area: LanguagesSkillsBullets2a; }
+div.LanguagesSkillsBullets2b { grid-area: LanguagesSkillsBullets2b; }
+div.LanguagesSkillsBullets3a { grid-area: LanguagesSkillsBullets3a; }
+div.LanguagesSkillsBullets3b { grid-area: LanguagesSkillsBullets3b; }
+div.LanguagesSkillsBullets3c { grid-area: LanguagesSkillsBullets3c; }
+
+div.LanguagesSkillsBullets2Col {
+	grid-template-areas: 
+		"LanguagesSkillsBullets2a LanguagesSkillsBullets2b"
+}
+
+div.LanguagesSkillsBullets3Col {
+	grid-template-areas: 
+		"LanguagesSkillsBullets3a LanguagesSkillsBullets3b LanguagesSkillsBullets3c"
+}
+
+div.BusinessSkillsBullets2a { grid-area: BusinessSkillsBullets2a; }
+div.BusinessSkillsBullets2b { grid-area: BusinessSkillsBullets2b; }
+
+div.BusinessSkillsBullets2Col {
+	display: none;
+	align-items: top;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: 
+		"BusinessSkillsBullets2a BusinessSkillsBullets2b"
+}
+
+/**RESPONSIVE DESIGN**/
+@media screen and (min-width: 600px){
+	
+	div.resumeColumns {
+		display: grid;
+		align-items: top;
+		grid-template-columns: 30% 70%;
+	}
+
+	div.resumeMaster {
+		grid-template-areas: 
+			"mastersDate mastersTitle"
+			"mastersDate mastersContent"
+	}
+
+	div.resumeBachelors {
+		grid-template-areas: 
+			"bachelorsDate bachelorsTitle"
+			"bachelorsDate bachelorsContent"
+			"bachelorsDate SOFIRST"
+	}
+
+	div.JD5 {
+		grid-template-areas: 
+			"JD5Date JD5Title"
+			"JD5Date JD5Content"
+	}
+
+	div.JD4 {
+		grid-template-areas: 
+			"JD4Date JD4Title"
+			"JD4Date JD4Content"
+	}
+
+	div.JD3 {
+		grid-template-areas: 
+			"JD3Date JD3Title"
+			"JD3Date JD3Content"
+	}
+
+	div.JD2 {
+		grid-template-areas: 
+			"JD2Date JD2Title"
+			"JD2Date JD2Content"
+	}
+
+	div.JD1 {
+		grid-template-areas: 
+			"JD1Date JD1Title"
+			"JD1Date JD1Content"
+	}
+
+	div.ISU212 {
+		grid-template-areas: 
+			"ISU212Date ISU212Title"
+			"ISU212Date ISU212Content"
+	}
+
+	div.ISURA {
+		grid-template-areas: 
+			"ISURADate ISURATitle"
+			"ISURADate ISURAContent"
+	}
+
+	div.ISUTA {
+		grid-template-areas: 
+			"ISUTADate ISUTATitle"
+			"ISUTADate ISUTAContent"
+	}
+
+	div.ISUWise {
+		grid-template-areas: 
+			"ISUWiseDate ISUWiseTitle"
+			"ISUWiseDate ISUWiseContent"
+	}
+
+	div.DFLD {
+		grid-template-areas: 
+			"DFLDDate DFLDTitle"
+			"DFLDDate DFLDContent"
+	}
+}
+
+@media screen and (min-width: 650px) {
+	div.SkillsBullets1Col {
+		display: none;
+	}
+	
+	div.SkillsBullets2Col, div.BusinessSkillsBullets2Col {
+		display: grid;
+	}
+
+	div.SkillsBullets3Col {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 850px){
+	div.resumeTitle, div.resumeWorkExperiences, div.resumeEducation, div.resumeSkills{
+		padding-left: 1.2in;
+		padding-right: 1.2in;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	div.SkillsBullets1Col {
+		display: none;
+	}
+	
+	div.SkillsBullets2Col {
+		display: none;
+	}
+
+	div.SkillsBullets3Col, div.BusinessSkillsBullets2Col {
+		display: grid;
+	}
+}

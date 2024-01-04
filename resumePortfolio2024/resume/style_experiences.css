@@ -1,0 +1,1070 @@
+@font-face{
+	font-family: "LTFunk";
+	src: url("LTFunk.otf") format('opentype');
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "DMSansRegular";
+	src: url("DMSans-Regular.ttf") format('truetype');
+}
+
+@font-face{
+	font-family: "DMSansSemiBold";
+	src: url("DMSans-SemiBold.ttf") format('truetype');
+}
+
+div.experienceTitleSection, div.experienceBasics, div.experienceDetails, div.otherExperiences {
+	background-color: #FDF3DD;
+}
+
+h2.experienceExampleTitle {
+	margin-bottom: 0;
+	font-size: 30pt;
+	text-align: center;
+	padding-top: 0.5in;
+	padding-bottom: 0.1in;
+}
+
+img.experiencePhoto {
+	width: 50%;
+}
+
+img.experiencePhotoMedium {
+	width: 65%;
+}
+
+img.experiencePhotoLarge {
+	width: 75%;
+}
+
+img.experiencePhotoExtraLarge {
+	width: 90%;
+}
+
+div.experienceTitleSection, div.experienceBasics, div.experienceDetails, div.otherExperiences {
+	padding-left: 0.5in;
+	padding-right: 0.5in;
+}
+
+h3.basicsTitle {
+	padding-top: 0.2in;
+	padding-bottom: 0.1in;
+	margin-bottom: 0;
+	font-size: 23pt;
+	text-align: center;
+}
+
+p.goalsParagraph {
+	font-size: 12pt;
+	margin: 0;
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	padding-bottom: 0.2in;
+}
+
+img.basicsPhotos {
+	width: 50%;
+}
+
+p.basicsLabelsSkills {
+	text-align: center;
+	padding-left: 0.15in;
+	padding-right: 0.15in;
+}
+
+p.basicsLabelsTools {
+	text-align: left;
+	padding-left: 0.15in;
+	padding-right: 15%;
+}
+
+img.roboticsClubWebsiteFinal, img.aftermarketFinal {
+	padding-bottom: 0.2in;
+}
+
+img.scorecardFinal {
+	padding-top: 0;
+}
+
+div.finalProduct { 
+	grid-area: finalProduct; 
+	background-color: #F6C9C3;
+	border-radius: 0.1in;
+	margin-top: 0.1in;
+	margin-bottom: 0.1in;
+}
+div.productGoals { 
+	grid-area: productGoals; 
+	background-color: #B84C65;
+	color: #FDF3DD;
+	border-radius: 0.1in;
+	margin-top: 0.1in;
+	margin-bottom: 0.1in;
+}
+
+div.mainSkillsTitle		{ grid-area: mainSkillsTitle; }
+div.mainSkills1a		{ grid-area: mainSkills1a; }
+div.mainSkills1b		{ grid-area: mainSkills1b; }
+div.mainSkills2a		{ grid-area: mainSkills2a; }
+div.mainSkills2b		{ grid-area: mainSkills2b; }
+div.mainSkills3a		{ grid-area: mainSkills3a; }
+div.mainSkills3b		{ grid-area: mainSkills3b; }
+div.mainSkillsOther		{ grid-area: mainSkillsOther; }
+
+div.mainSkills1a, div.mainSkills1b, div.mainSkills2a, div.mainSkills2b, div.mainSkills3a, div.mainSkills3b {
+	padding-bottom: 0.1in;
+}
+
+div.mainSkills {
+	background-color: #E4D2BF;
+	border-radius: 0.1in;
+	margin-top: 0.1in;
+	margin-bottom: 0.1in;
+	padding-left: 0.1in;
+	padding-right: 0.1in;
+	grid-area: mainSkills; 
+	display: grid;
+	align-items: center;
+	grid-template-columns: 40% 60%;
+	grid-template-areas: 
+		"mainSkillsTitle mainSkillsTitle"
+		"mainSkills1a mainSkills1b"
+		"mainSkills2a mainSkills2b"
+		"mainSkills3a mainSkills3b"
+		"mainSkillsOther mainSkillsOther"
+}
+
+div.mainToolsSoftwareTitle	{ grid-area: mainToolsSoftwareTitle;}
+div.mainToolsSoftware1		{ grid-area: mainToolsSoftware1; }
+div.mainToolsSoftware2		{ grid-area: mainToolsSoftware2; }
+div.mainToolsSoftwareOther	{ grid-area: mainToolsSoftwareOther; }
+
+div.mainToolsSoftware	{ 
+	background-color: #DDA7A2;
+	border-radius: 0.1in;
+	margin-top: 0.1in;
+	margin-bottom: 0.1in;
+	grid-area: mainToolsSoftware; 
+	display: grid;
+	align-items: top;
+	grid-template-columns: 33% 66%;
+	grid-template-areas:
+		"mainToolsSoftwareTitle mainToolsSoftwareTitle"
+		"mainToolsSoftware1 mainToolsSoftware2"
+		"mainToolsSoftwareOther mainToolsSoftwareOther"
+}
+
+p.basicsOther {
+	padding-left: 0.3in;
+	padding-right: 0.3in;
+	padding-bottom: 0.3in;
+	padding-top: 0.1in;
+	margin: 0;
+	font-size: 10pt;
+}
+
+div.experienceBasics {
+	grid-area: experienceBasics;
+	padding-bottom: 0.6in;
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"finalProduct"
+		"productGoals"
+		"mainSkills"
+		"mainToolsSoftware"
+}
+
+div.step {
+	padding-bottom: 0.6in;
+}
+
+div.stepCircle {
+	border-radius: 50%;
+	background-color: #785C60;
+	width: 1in;
+	height: 1in;
+	color: #FDF3DD;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+}
+
+h2.stepNumber {
+	text-align: center;
+	margin: 0;
+}
+
+h2.experienceHead {
+	font-size: 25pt;
+	margin: 0;
+}
+
+p.experienceLink, a.experienceLink, p.experienceButton {
+	font-family: LTFunk;
+	text-align: center;
+	color: #FDF3DD;
+	font-size: 18pt;
+}
+
+a.experienceLink {
+	padding: 0.08in;
+	margin: 0;
+}
+
+p.experienceLink {
+	margin: 0;
+}
+
+div.figmaButton {
+	background-color: #B84C65;
+	padding: 0.08in;
+	padding-left: 0.4in;
+	padding-right: 0.4in;
+	border-radius: 0.1in;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-color: #B84C65;
+	border-width: 0.03in;
+}	
+
+div.figmaButtonLong {
+	max-width: 4.2in;
+}
+
+div.figmaButtonShort {
+	max-width: 2.3in;
+}
+
+div.figmaButtonImages {
+	margin-top: 0.2in;
+}
+
+p.experienceButton {
+	margin: 0;
+}
+
+	
+div.stepNumber0 	{ grid-area: stepNumber0; }
+div.stepTitle0 		{ grid-area: stepTitle0; }
+div.stepContent0 	{ grid-area: stepContent0; }
+div.stepImages0		{ grid-area: stepImages0; }
+
+div.stepCircle0 {
+	grid-area: stepCircle0;
+	grid-template-areas:
+		"stepNumber0"
+}
+
+div.step0 {
+	border-top-style: solid;
+	border-top-color: black;
+	border-top-width: 0.03in;
+	padding-top: 0.2in;
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle0 stepTitle0"
+		"stepContent0 stepContent0"
+		"stepImages0 stepImages0"
+}
+
+div.RoboticsProblem0Title	{ grid-area: RoboticsProblem0Title; }
+div.RoboticsProblem0a		{ grid-area: RoboticsProblem0a; }
+div.RoboticsProblem0b		{ grid-area: RoboticsProblem0b; }
+div.RoboticsProblem0c		{ grid-area: RoboticsProblem0c; }
+
+div.RoboticsProblem0 {
+	padding-bottom: 0.2in;
+	display: grid;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"RoboticsProblem0Title"
+		"RoboticsProblem0a"
+		"RoboticsProblem0b"
+		"RoboticsProblem0c"
+}
+
+h3.oldWebsiteTitle {
+	text-align: center;
+}
+
+div.stepNumber1 	{ grid-area: stepNumber1; }
+div.stepTitle1 		{ grid-area: stepTitle1; }
+div.stepContent1 	{ grid-area: stepContent1; }
+div.stepImages1		{ grid-area: stepImages1; }
+
+div.stepCircle1 {
+	grid-area: stepCircle1;
+	grid-template-areas:
+		"stepNumber1"
+}
+
+div.step1 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle1 stepTitle1"
+		"stepContent1 stepContent1"
+		"stepImages1 stepImages1"
+}
+
+div.RoboticsPhotoColumnsStep1a	{ grid-area: RoboticsPhotoColumnsStep1a; }
+div.RoboticsPhotoColumnsStep1b	{ 
+	grid-area: RoboticsPhotoColumnsStep1b; 
+	display: none;
+}
+
+div.RoboticsPhotoColumnsStep1 {
+	display: grid; 
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"RoboticsPhotoColumnsStep1a"
+}
+
+img.APIPhotosStep1 {
+	padding-top: 0.2in;
+	padding-bottom: 0.2in;
+}
+
+img.APIPhotosStep2 {
+	padding-bottom: 0.3in;
+}
+
+div.stepNumber2 	{ grid-area: stepNumber2; }
+div.stepTitle2 		{ grid-area: stepTitle2; }
+div.stepContent2 	{ grid-area: stepContent2; }
+div.stepImages2		{ grid-area: stepImages2; }
+
+div.stepCircle2 {
+	grid-area: stepCircle2;
+	grid-template-areas:
+		"stepNumber2"
+}
+
+div.step2 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle2 stepTitle2"
+		"stepContent2 stepContent2"
+		"stepImages2 stepImages2"
+}
+
+div.APIOwnersPhotoStep2a { grid-area: APIOwnersPhotoStep2a; }
+div.APIOwnersPhotoStep2b { grid-area: APIOwnersPhotoStep2b; }
+
+div.APIPhotoColumnsStep2 {
+	display: grid;
+	padding-top: 0.2in;
+	align-items: top;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"APIOwnersPhotoStep2a"
+		"APIOwnersPhotoStep2b"
+}
+
+div.stepNumber3 	{ grid-area: stepNumber3; }
+div.stepTitle3 		{ grid-area: stepTitle3; }
+div.stepContent3 	{ grid-area: stepContent3; }
+
+div.stepCircle3 {
+	grid-area: stepCircle3;
+	grid-template-areas:
+		"stepNumber3"
+}
+
+div.step3 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle3 stepTitle3"
+		"stepContent3 stepContent3"
+}
+
+div.stepNumber4 	{ grid-area: stepNumber4; }
+div.stepTitle4 		{ grid-area: stepTitle4; }
+div.stepContent4 	{ grid-area: stepContent4; }
+div.stepImages4		{ grid-area: stepImages4; }
+
+div.stepCircle4 {
+	grid-area: stepCircle4;
+	grid-template-areas:
+		"stepNumber4"
+}
+
+div.step4 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle4 stepTitle4"
+		"stepContent4 stepContent4"
+		"stepImages4 stepImages4"
+}
+
+div.APIOwnersPhotoStep4a	{ 
+	grid-area: APIOwnersPhotoStep4a; 
+}
+
+img.APIPhotosStep4 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+div.APIOwnersPhotoStep4b	{ 
+	grid-area: APIOwnersPhotoStep4b; 
+	display: none;
+}
+
+div.APIPhotoColumnsStep4 {
+	padding-top: 0.2in;
+	grid-area: APIPhotoColumnsStep4;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"APIOwnersPhotoStep4a"
+}
+
+div.RoboticsPhotoColumnsStep4a	{ 
+	grid-area: RoboticsPhotoColumnsStep4a; 
+	padding-bottom: 0.3in;
+}
+div.RoboticsPhotoColumnsStep4b	{ 
+	grid-area: RoboticsPhotoColumnsStep4b; 
+	position: relative;
+}
+
+div.RoboticsPhotoColumnsStep4 {
+	padding-top: 0.2in;
+	grid-area: RoboticsPhotoColumnsStep4;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"RoboticsPhotoColumnsStep4a" 
+		"RoboticsPhotoColumnsStep4b"
+}
+
+div.stepNumber5 	{ grid-area: stepNumber5; }
+div.stepTitle5 		{ grid-area: stepTitle5; }
+div.stepContent5 	{ grid-area: stepContent5; }
+div.stepImages5		{ grid-area: stepImages5; }
+
+div.stepCircle5 {
+	grid-area: stepCircle5;
+	grid-template-areas:
+		"stepNumber5"
+}
+
+div.step5 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle5 stepTitle5"
+		"stepContent5 stepContent5"
+		"stepImages5 stepImages5"
+}
+
+div.stepNumber6 	{ grid-area: stepNumber6; }
+div.stepTitle6 		{ grid-area: stepTitle6; }
+div.stepContent6 	{ grid-area: stepContent6; }
+
+div.stepCircle6 {
+	grid-area: stepCircle6;
+	grid-template-areas:
+		"stepNumber6"
+}
+
+div.step6 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle6 stepTitle6"
+		"stepContent6 stepContent6"
+}
+
+div.stepNumber7 	{ grid-area: stepNumber7; }
+div.stepTitle7 		{ grid-area: stepTitle7; }
+div.stepContent7 	{ grid-area: stepContent7; }
+
+div.stepCircle7 {
+	grid-area: stepCircle7;
+	grid-template-areas:
+		"stepNumber7"
+}
+
+div.step7 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle7 stepTitle7"
+		"stepContent7 stepContent7"
+}
+
+div.stepNumber8 	{ grid-area: stepNumber8; }
+div.stepTitle8 		{ grid-area: stepTitle8; }
+div.stepContent8 	{ grid-area: stepContent8; }
+div.stepImages8		{ grid-area: stepImages8; }
+
+div.stepCircle8 {
+	grid-area: stepCircle8;
+	grid-template-areas:
+		"stepNumber8"
+}
+
+div.step8 {
+	display: grid;
+	align-items: top;
+	grid-template-columns: 1.5in auto;
+	grid-template-areas: 
+		"stepCircle8 stepTitle8"
+		"stepContent8 stepContent8"
+		"stepImages8 stepImages8"
+}
+
+div.AftermarketStep8a	{ 
+	grid-area: AftermarketStep8a; 
+	padding-bottom:0.3in;
+}
+div.AftermarketStep8b	{ grid-area: AftermarketStep8b; }
+
+div.AftermarketStep8 {
+	grid-area: AftermarketStep8;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"AftermarketStep8a"
+		"AftermarketStep8b"
+}
+
+video.roboticsClubWebsiteFinal {
+	padding-top: 0.2in;
+}
+
+div.otherExperiences {
+	padding-bottom: 0.4in;
+	display: grid;
+	align-items: top;
+}
+
+div.navTitle {
+	grid-area: navTitle;
+	border-top-style: solid;
+	border-top-color: black;
+	border-top-width: 0.03in;
+}
+
+h3.otherExperienceTitle {
+	font-size: 23pt;
+	text-align: center;
+	padding-top: 0.2in;
+}
+
+img.navigateLearnMore {
+	width: 8%;
+	padding-right: 2.5%;
+}
+
+div.experienceColumn, a.experienceColumn {
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 0.2in;
+	border-radius: 0.1in;
+	margin-left: 5%;
+	margin-right: 5%;
+	position: relative;
+	font-family: DMSansSemiBold;
+}
+
+div.apiLink, a.apiLink {
+	grid-area: apiLink;
+	background-color: #663635;
+	display: grid;
+	align-items: center;
+	color: #FDF3DD;
+	margin-bottom: 0.2in;
+}
+div.roboticsLink, a.roboticsLink { 
+	grid-area: roboticsLink; 
+	background-color: #DEB3AD;
+	display: grid;
+	align-items: center;
+	margin-bottom: 0.2in;
+}
+div.aftermarketLink, a.aftermarketLink { 
+	grid-area: aftermarketLink; 
+	background-color: #F6C9C3;
+	display: grid;
+	align-items: center;
+	margin-bottom: 0.2in;
+}
+div.scorecardLink, a.scorecardLink { 
+	grid-area: scorecardLink; 
+	background-color: #C97A80;
+	display: grid;
+	align-items: center;
+	margin-bottom: 0.2in;
+}
+
+div.navExperienceRoboticsClub {
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"navTitle"
+		"apiLink"
+		"aftermarketLink"
+		"scorecardLink"
+}
+div.navExperienceAPIOwnership {
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"navTitle"
+		"roboticsLink"
+		"aftermarketLink"
+		"scorecardLink"
+}
+div.navExperienceAftermarket {
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"navTitle"
+		"apiLink"
+		"roboticsLink"
+		"scorecardLink"
+}
+div.navExperienceScorecard {
+	grid-template-columns: 100%;
+	grid-template-areas: 
+		"navTitle"
+		"apiLink"
+		"roboticsLink"
+		"aftermarketLink"
+}
+
+a.ivoryExperienceLink {
+	color: #FDF3DD;
+}
+
+img.navigationPhoto {
+	padding-top: 0.2in;
+	padding-bottom: 0.2in;
+	width: 30%;
+}
+
+p.experienceNavBottom {
+	text-align: center;
+	font-size: 12pt;
+	margin: 0;
+	font-family: DMSansSemiBold;
+}
+
+/**HOOVERING**/
+a.scorecardLink:hover, a.aftermarketLink:hover, a.apiLink:hover, a.roboticsLink:hover {
+	background-color: #962547;
+	color: #FDF3DD;
+}
+
+img.scorecardLinkExperiencesMoreHover, img.scorecardLinkExperiencesImageHover, img.aftermarketLinkExperiencesMoreHover, img.aftermarketLinkExperiencesImageHover,  img.roboticsLinkExperiencesMoreHover, img.roboticsLinkExperiencesImageHover{
+	display: none;
+}
+
+div.figmaButton:hover {
+	background-color: #962547;
+	border-style: solid;
+	border-color: black;
+	border-width: 0.03in;
+}
+
+
+/**RESPONSEIVE DESIGN**/
+@media screen and (min-width: 500px) {
+	div.mainSkills {
+		display: grid;
+		align-items: normal;
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"mainSkillsTitle mainSkillsTitle mainSkillsTitle"
+			"mainSkills1a mainSkills2a mainSkills3a"
+			"mainSkills1b mainSkills2b mainSkills3b"
+			"mainSkillsOther mainSkillsOther mainSkillsOther"
+	}
+	
+	div.mainSkills1a, div.mainSkills1b, div.mainSkills2a, div.mainSkills2b, div.mainSkills3a, div.mainSkills3b {
+		padding-bottom: 0;
+	}
+}
+
+
+@media screen and (min-width: 650px){	
+	div.step0 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle0 stepTitle0"
+			"stepCircle0 stepContent0"
+			"stepImages0 stepImages0"
+	}
+
+	div.step1 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle1 stepTitle1"
+			"stepCircle1 stepContent1"
+			"stepImages1 stepImages1"
+	}
+	
+	div.step2 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle2 stepTitle2"
+			"stepCircle2 stepContent2"
+			"stepImages2 stepImages2"
+	}
+
+	div.step3 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle3 stepTitle3"
+			"stepCircle3 stepContent3"
+	}
+
+	div.step4 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle4 stepTitle4"
+			"stepCircle4 stepContent4"
+			"stepImages4 stepImages4"
+	}
+
+	div.step5 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle5 stepTitle5"
+			"stepCircle5 stepContent5"
+			"stepImages5 stepImages5"
+	}
+
+	div.step6 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle6 stepTitle6"
+			"stepCircle6 stepContent6"
+	}
+
+	div.step7 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle7 stepTitle7"
+			"stepCircle7 stepContent7"
+	}
+
+	div.step8 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle8 stepTitle8"
+			"stepCircle8 stepContent8"
+			"stepImages8 stepImages8"
+	}
+}
+
+@media screen and (min-width: 800px){
+	div.experienceTitleSection, div.experienceBasics, div.experienceDetails, div.otherExperiences {
+		padding-left: 1.2in;
+		padding-right: 1.2in;
+	}
+	
+	p.basicsLabelsSkills {
+		text-align: left;
+		padding-left: 0.15in;
+		padding-right: 0.25in;
+	}
+	
+	div.mainSkills {
+		margin: 0.1in;
+		margin-left: 0;
+	}
+	
+	div.mainToolsSoftware { 
+		margin: 0.1in;
+		margin-right: 0;
+	}
+	
+	div.experienceBasics {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"finalProduct finalProduct"
+			"productGoals productGoals"
+			"mainSkills mainToolsSoftware"
+	}
+
+	div.mainSkills {
+		align-items: center;
+		grid-template-columns: 40% 60%;
+		grid-template-areas: 
+			"mainSkillsTitle mainSkillsTitle"
+			"mainSkills1a mainSkills1b"
+			"mainSkills2a mainSkills2b"
+			"mainSkills3a mainSkills3b"
+			"mainSkillsOther mainSkillsOther"
+	}
+	
+	div.mainSkills1a, div.mainSkills1b, div.mainSkills2a, div.mainSkills2b, div.mainSkills3a, div.mainSkills3b {
+		padding-bottom: 0.1in;
+	}
+	
+	div.APIPhotoColumnsStep2 {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"APIOwnersPhotoStep2a APIOwnersPhotoStep2b"
+	}
+	
+	img.APIPhotosStep4 {
+		margin-left: 0;
+	}
+	
+	div.APIOwnersPhotoStep4b {
+		display: inline;
+	}
+	
+	div.APIPhotoColumnsStep4 {
+		grid-template-columns: 80% 20%;
+		grid-template-areas: 
+			"APIOwnersPhotoStep4a APIOwnersPhotoStep4b"
+	}
+	
+	div.AftermarketStep8 {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"AftermarketStep8a AftermarketStep8b"
+	}
+	
+	div.AftermarketStep8a {
+		padding-bottom: 0;
+	}
+	
+	div.RoboticsPhotoColumnsStep1 {
+		display: grid; 
+		align-items: top;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"RoboticsPhotoColumnsStep1a RoboticsPhotoColumnsStep1b"
+	}
+	
+	div.RoboticsPhotoColumnsStep1b {
+		display: inline;
+	}
+	
+	div.RoboticsPhotoColumnsStep4 {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"RoboticsPhotoColumnsStep4a RoboticsPhotoColumnsStep4b"
+	}
+	
+	div.RoboticsPhotoColumnsStep4a {
+		padding-bottom: 0;
+	}
+	
+	div.navExperienceRoboticsClub {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink aftermarketLink scorecardLink"
+	}
+	div.navExperienceAPIOwnership {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"roboticsLink aftermarketLink scorecardLink"
+	}
+	div.navExperienceAftermarket {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink roboticsLink scorecardLink"
+	}
+	div.navExperienceScorecard {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink roboticsLink aftermarketLink"
+	}
+}
+
+@media screen and (min-width: 900px) {
+	div.RoboticsProblem0 {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"RoboticsProblem0Title RoboticsProblem0Title RoboticsProblem0Title"
+			"RoboticsProblem0a RoboticsProblem0b RoboticsProblem0c"
+	}
+	
+	p.experienceButton {
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	p.basicsLabelsSkills {
+		text-align: center;
+		padding-left: 0.15in;
+		padding-right: 0.15in;
+	}
+	
+	div.finalProduct {
+		margin: 0.1in;
+		margin-left: 0;
+	}
+	
+	div.productGoals {
+		margin: 0.1in;
+		margin-right: 0;
+	}
+	
+	div.mainSkills1a, div.mainSkills1b, div.mainSkills2a, div.mainSkills2b, div.mainSkills3a, div.mainSkills3b {
+		padding-bottom: 0in;
+	}
+	
+	div.mainSkills {
+		align-items: normal;
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"mainSkillsTitle mainSkillsTitle mainSkillsTitle"
+			"mainSkills1a mainSkills2a mainSkills3a"
+			"mainSkills1b mainSkills2b mainSkills3b"
+			"mainSkillsOther mainSkillsOther mainSkillsOther"
+	}
+
+	div.mainToolsSoftware	{ 
+		grid-template-columns: 33% 66%;
+		grid-template-areas:
+			"mainToolsSoftwareTitle mainToolsSoftwareTitle"
+			"mainToolsSoftware1 mainToolsSoftware2"
+			"mainToolsSoftwareOther mainToolsSoftwareOther"
+	}
+
+	div.experienceBasics {
+		grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+		grid-template-areas: 
+			"finalProduct finalProduct finalProduct finalProduct finalProduct finalProduct finalProduct productGoals productGoals productGoals"
+			"mainSkills mainSkills mainSkills mainSkills mainSkills mainToolsSoftware mainToolsSoftware mainToolsSoftware mainToolsSoftware mainToolsSoftware"
+	}
+
+	div.step0 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle0 stepTitle0"
+			"stepCircle0 stepContent0"
+			"stepCircle0 stepImages0"
+	}
+
+	div.step1 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle1 stepTitle1"
+			"stepCircle1 stepContent1"
+			"stepCircle1 stepImages1"
+	}
+
+	div.RoboticsPhotoColumnsStep1 {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"RoboticsPhotoColumnsStep1a RoboticsPhotoColumnsStep1b"
+	}
+
+	div.step2 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle2 stepTitle2"
+			"stepCircle2 stepContent2"
+			"stepCircle2 stepImages2"
+	}
+
+	div.step3 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle3 stepTitle3"
+			"stepCircle3 stepContent3"
+	}
+
+	div.step4 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle4 stepTitle4"
+			"stepCircle4 stepContent4"
+			"stepCircle4 stepImages4"
+	}
+
+	div.RoboticsPhotoColumnsStep4 {
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 
+			"RoboticsPhotoColumnsStep4a RoboticsPhotoColumnsStep4b"
+	}
+
+	div.step5 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle5 stepTitle5"
+			"stepCircle5 stepContent5"
+			"stepCircle5 stepImages5"
+	}
+
+	div.step6 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle6 stepTitle6"
+			"stepCircle6 stepContent6"
+	}
+
+	div.step7 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle7 stepTitle7"
+			"stepCircle7 stepContent7"
+	}
+
+	div.step8 {
+		grid-template-columns: 1.5in auto;
+		grid-template-areas: 
+			"stepCircle8 stepTitle8"
+			"stepCircle8 stepContent8"
+			"stepCircle8 stepImages8"
+	}
+
+	div.navExperienceRoboticsClub {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink aftermarketLink scorecardLink"
+	}
+	div.navExperienceAPIOwnership {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"roboticsLink aftermarketLink scorecardLink"
+	}
+	div.navExperienceAftermarket {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink roboticsLink scorecardLink"
+	}
+	div.navExperienceScorecard {
+		grid-template-columns: 33% 33% 33%;
+		grid-template-areas: 
+			"navTitle navTitle navTitle"
+			"apiLink roboticsLink aftermarketLink"
+	}
+}
